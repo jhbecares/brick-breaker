@@ -45,9 +45,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\__Scripts\Ball.cs" />
-     <Compile Include="Assets\__Scripts\Paddle.cs" />
+     <Compile Include="Assets\__Scripts\BallScript.cs" />
+     <Compile Include="Assets\__Scripts\BrickScript.cs" />
+     <Compile Include="Assets\__Scripts\PaddleScript.cs" />
      <Compile Include="Assets\__Scripts\Picker.cs" />
+     <Compile Include="Assets\__Scripts\Utils.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
