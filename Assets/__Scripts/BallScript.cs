@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ball : MonoBehaviour {
+public class BallScript : MonoBehaviour {
 
+	public GameObject ball;
 	public static float bottomY = -20f;
+
 
 	void Start() {
 		//Rigidbody.AddForce (0, 1000f, 0);
+		this.GetComponent<Rigidbody> ().AddForce (80, 800f, 0);
 	}
 
 	// Update is called once per frame
