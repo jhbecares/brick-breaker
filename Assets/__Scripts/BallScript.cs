@@ -22,5 +22,6 @@ public class BallScript : MonoBehaviour {
 			Picker pickerScript = Camera.main.GetComponent<Picker>();
 			pickerScript.BallDestroyed();
 		}
+
 	}
 }
