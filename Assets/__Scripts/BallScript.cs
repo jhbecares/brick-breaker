@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BallScript : MonoBehaviour {
@@ -8,8 +8,9 @@ public class BallScript : MonoBehaviour {
 
 
 	void Start() {
-		//Rigidbody.AddForce (0, 1000f, 0);
-		this.GetComponent<Rigidbody> ().AddForce (80, 800f, 0);
+		// Para las pruebas iniciábamos la bola con fuerza, pero ya no lo queremos,
+		// ya que la bola comienza quieta
+		//this.GetComponent<Rigidbody> ().AddForce (80, 800f, 0);
 	}
 
 	// Update is called once per frame
@@ -22,6 +23,5 @@ public class BallScript : MonoBehaviour {
 			Picker pickerScript = Camera.main.GetComponent<Picker>();
 			pickerScript.BallDestroyed();
 		}
-
 	}
 }
