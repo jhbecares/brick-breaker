@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PaddleScript : MonoBehaviour {
 
-	public float paddleSpeed = 20f;
+	public float paddleSpeed = 25f;
 	public Bounds bounds;
 
 	// Update is called once per frame
@@ -32,6 +32,7 @@ public class PaddleScript : MonoBehaviour {
 			pos -= off;
 			transform.position = pos;
 		}
+
 	}
 
 	void OnCollisionEnter(Collision coll) {
@@ -41,7 +42,7 @@ public class PaddleScript : MonoBehaviour {
 			if (contact.thisCollider == GetComponent<Collider>()) {
 				// Esto corresponde al punto de contacto del paddle
 				float english = contact.point.x - transform.position.x;
-				contact.otherCollider.GetComponent<Rigidbody>().AddForce(300f * english, 0, 0);
+				contact.otherCollider.GetComponent<Rigidbody>().AddForce(200f * english, 0, 0);
 
 			}
 		}
