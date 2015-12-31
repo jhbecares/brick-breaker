@@ -5,11 +5,14 @@ public class BrickScript : MonoBehaviour {
 
 	public GUIText scoreGT;
 
+	public static int score {get;set;}
+
 	// Use this for initialization
 	void Start () {
 		GameObject scoreGO = GameObject.Find ("ScoreCounter");
 		scoreGT = scoreGO.GetComponent<GUIText> ();
-		scoreGT.text = "0";
+		scoreGT.text = "Score: 0";
+		PlayerPrefs.SetInt ("Score", 0);
 	}
 	
 	// Update is called once per frame
@@ -18,17 +21,18 @@ public class BrickScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll) {
-		Debug.Log ("Destroy on collision");
+		//Debug.Log ("Destroy on collision");
 		Destroy (gameObject);
 
 		// Parse the text of the scoreGT into an int
-		int score = int.Parse (scoreGT.text);
+		//int score = int.Parse (scoreGT.text);
 		
 		// Add points for catching the apple
 		score += 100;
+		PlayerPrefs.SetInt ("Score", score);
 		
 		// Convert the score back to a string and display it
-		scoreGT.text = score.ToString ();
+		scoreGT.text = "Score: " + score.ToString ();
 		
 		// Track the high score
 		if (score > HighScore.score) {

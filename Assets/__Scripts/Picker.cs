@@ -16,6 +16,7 @@ public class Picker : MonoBehaviour {
 
 	void Start () {
 		// Instanciar la nueva bola
+		Lives.lives = numBaskets;
 
 		Vector3 pos = Vector3.zero;
 		paddleList = new List<GameObject>();
@@ -69,6 +70,7 @@ public class Picker : MonoBehaviour {
 		//// Destruimos uno de los paddles
 		// cogemos el índice de nuestra lista de paddles
 		int paddleIndex = paddleList.Count-1;
+		Lives.lives = paddleIndex;
 
 		// cogemos la referencia al paddle
 		GameObject tPaddleGO = paddleList[paddleIndex];
@@ -76,9 +78,12 @@ public class Picker : MonoBehaviour {
 		paddleList.RemoveAt(paddleIndex);
 		Destroy (tPaddleGO);
 
+		// Si se nos acaban las vidas, volvemos a empezar el juego
 		if (paddleList.Count == 0) {
+			BrickScript.score = 0; // reseteamos la puntuación
 			Application.LoadLevel ("Brik");
 		} else {
+			// en caso contrario simplemente lanzamos de nuevo el nivel
 			SpawnBall();
 		}
 	}
