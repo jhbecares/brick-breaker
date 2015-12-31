@@ -75,5 +75,11 @@ public class Picker : MonoBehaviour {
 		// y borramos el objeto
 		paddleList.RemoveAt(paddleIndex);
 		Destroy (tPaddleGO);
+
+		if (paddleList.Count == 0) {
+			Application.LoadLevel ("Brik");
+		} else {
+			SpawnBall();
+		}
 	}
 }
