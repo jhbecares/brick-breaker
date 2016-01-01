@@ -396,14 +396,14 @@
 	-->
   
       <!-- Primera fila de ladrillos empezando por debajo -->
-	  <brick type="simple" colour="orange" x="-5" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="orange" x="-3" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="orange" x="3" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="orange" x="5" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="-5" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="-3" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="3" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="5" y="-5.5" z="0" scalex="2" scaley="1" scalez="1"/>
   
   
   	  <!-- Primera fila de ladrillos empezando por debajo -->
-	  <brick type="simple" colour="orange" x="-9" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <!--<brick type="unbreakable" colour="black" x="-9" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <!--<brick type="simple" colour="yellow" x="-7" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
 	  <brick type="simple" colour="blue" x="-5" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="-3" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -411,11 +411,11 @@
 	  <brick type="simple" colour="blue" x="1" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
 	  <brick type="simple" colour="blue" x="3" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="5" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <!--<brick type="simple" colour="blue" x="7" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
-	  <brick type="simple" colour="orange" x="9" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <!--<brick type="simple" colour="blue" x="7" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="9" y="-4.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
 
 	  <!-- Primera fila de ladrillos empezando por debajo -->
-	  <brick type="simple" colour="orange" x="-9" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="-9" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <!---<brick type="simple" colour="blue" x="-7" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
 	  <brick type="simple" colour="blue" x="-5" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="-3" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -424,7 +424,7 @@
 	  <brick type="simple" colour="blue" x="3" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="5" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <!--<brick type="simple" colour="blue" x="7" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
-	  <brick type="simple" colour="orange" x="9" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="9" y="-3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
 	  <!-- Primera fila de ladrillos empezando por debajo -->
 	  <brick type="simple" colour="yellow" x="-9" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -468,8 +468,8 @@
 	  <brick type="simple" colour="yellow" x="-7" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="-5" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="-3" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <!---<brick type="simple" colour="black" x="-1" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="black" x="1" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
+	  <brick type="unbreakable" colour="black" x="-1" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="1" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="3" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="blue" x="5" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="7" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -525,8 +525,8 @@
 	  <brick type="simple" colour="yellow" x="-7" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-5" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-3" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <!---<brick type="simple" colour="yellow" x="-1" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="yellow" x="1" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
+	  <brick type="unbreakable" colour="black" x="-1" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="1" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="3" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="5" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="7" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -585,14 +585,14 @@
 	  <brick type="simple" colour="yellow" x="7" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
 	  <!-- 15 fila -->
-	  <brick type="simple" colour="yellow" x="-7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="yellow" x="-5" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="-7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="-5" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-3" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <!---<brick type="simple" colour="orange" x="-1" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
-	  <!---<brick type="simple" colour="blue" x="1" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>-->
+	  <brick type="unbreakable" colour="black" x="-1" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="1" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="3" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="yellow" x="5" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
-	  <brick type="simple" colour="yellow" x="7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="5" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="unbreakable" colour="black" x="7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
 	  <!-- 16 fila -->
 	  <brick type="simple" colour="yellow" x="-7" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
