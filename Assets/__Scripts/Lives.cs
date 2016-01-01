@@ -15,7 +15,7 @@ public class Lives : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GUIText gt = this.GetComponent<GUIText> ();
-		gt.text = "Remaining lives: " + lives;
+		gt.text = "Lives: " + lives;
 	}
 
 	public static int lives {get;set;}
