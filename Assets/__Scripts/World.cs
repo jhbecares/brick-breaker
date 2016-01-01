@@ -9,11 +9,13 @@ public class World : MonoBehaviour {
 	public TextAsset bricksText;
 	public string levelNumber = "0";
 	public List<GameObject> brickPrefabs;
+	public static List<BrickScript> bricks;
 
 	public bool _________________;
 
 	public PT_XMLReader xmlr;
 	public PT_XMLHashList xml;
+	public int numberOfLevels;
 
 	void Awake() {
 		xmlr = new PT_XMLReader ();
@@ -21,8 +23,29 @@ public class World : MonoBehaviour {
 
 		xml = xmlr.xml ["xml"] [0] ["level"];
 
+		// Guardamos el numero de niveles. Lo usaremos para pasar al siguiente
+		numberOfLevels = xml.Count;
+
+		bricks = new List<BrickScript>();
+
+
 		// Construimos el nivel
+		
 		BuildLevel (levelNumber);
+	}
+
+	public void Update() {
+		// Si hemos destruido todos los objetos con tag "Brick",
+		// cargamos el siguiente nivel
+		if (bricks.Count <= 0) {
+			// Cargamos el siguiente nivel
+			int level;
+			int.TryParse(levelNumber, out level);
+			level = (level+ 1)%numberOfLevels;
+			levelNumber = "" + level;
+
+			Application.LoadLevel ("Level" + levelNumber);
+		}
 	}
 
 	public void BuildLevel(string rnumberstr) {
@@ -38,6 +61,7 @@ public class World : MonoBehaviour {
 		if (levelHT == null) {
 			Debug.LogError("Room not found: " + rnumberstr);
 		}
+
 		BuildLevel (levelHT);
 	}
 
@@ -69,7 +93,8 @@ public class World : MonoBehaviour {
 
 				}
 				else if (type == "unbreakable") {
-
+					GO = Instantiate(brickPrefabs[0]) as GameObject;
+					GO.tag = "UnbreakableBrick";
 				}
 			}
 			else if (colour == "orange") {
@@ -80,7 +105,8 @@ public class World : MonoBehaviour {
 					
 				}
 				else if (type == "unbreakable") {
-					
+					GO = Instantiate(brickPrefabs[1]) as GameObject;
+					GO.tag = "UnbreakableBrick";
 				}
 			}
 			else if (colour == "yellow") {
@@ -91,7 +117,8 @@ public class World : MonoBehaviour {
 					
 				}
 				else if (type == "unbreakable") {
-					
+					GO = Instantiate(brickPrefabs[2]) as GameObject;
+					GO.tag = "UnbreakableBrick";
 				}
 			}
 			else if (colour == "black") {
@@ -103,6 +130,7 @@ public class World : MonoBehaviour {
 				}
 				else if (type == "unbreakable") {
 					GO = Instantiate(brickPrefabs[3]) as GameObject;
+					GO.tag = "UnbreakableBrick";
 				}
 			}
 
@@ -110,7 +138,6 @@ public class World : MonoBehaviour {
 			GO.transform.localScale = new Vector3(scalex, scaley, scalez);
 
 		}
-
 	}
 
 }
