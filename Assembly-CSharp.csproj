@@ -49,9 +49,12 @@
      <Compile Include="Assets\__Scripts\BrickScript.cs" />
      <Compile Include="Assets\__Scripts\HighScore.cs" />
      <Compile Include="Assets\__Scripts\Lives.cs" />
+     <Compile Include="Assets\__Scripts\PT_XMLReader.cs" />
      <Compile Include="Assets\__Scripts\PaddleScript.cs" />
      <Compile Include="Assets\__Scripts\Picker.cs" />
      <Compile Include="Assets\__Scripts\Utils.cs" />
+     <Compile Include="Assets\__Scripts\World.cs" />
+     <None Include="Assets\Resources\BricksXML.xml" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
