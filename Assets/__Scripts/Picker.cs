@@ -43,9 +43,7 @@ public class Picker : MonoBehaviour {
 		//Quaternion ballRot = Quaternion.identity;
 
 		//attachedBall = Instantiate ( ballPrefab, ballPos, ballRot ) as GameObject;
-		attachedBall = Instantiate ( ballPrefab ) as GameObject;
-
-		
+		attachedBall = Instantiate ( ballPrefab ) as GameObject; 
 
 	}
 
@@ -81,10 +79,11 @@ public class Picker : MonoBehaviour {
 		// Si se nos acaban las vidas, volvemos a empezar el juego
 		if (paddleList.Count == 0) {
 			BrickScript.score = 0; // reseteamos la puntuación
-			Application.LoadLevel ("Brik");
+			Application.LoadLevel ("Level0");
 		} else {
 			// en caso contrario simplemente lanzamos de nuevo el nivel
 			SpawnBall();
 		}
 	}
+
 }
