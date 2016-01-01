@@ -13,6 +13,10 @@ public class BrickScript : MonoBehaviour {
 		scoreGT = scoreGO.GetComponent<GUIText> ();
 		scoreGT.text = "Score: 0";
 		PlayerPrefs.SetInt ("Score", 0);
+
+		if (this.tag != "UnbreakableBrick") {
+			World.bricks.Add(this);
+		}
 	}
 	
 	// Update is called once per frame
@@ -23,7 +27,7 @@ public class BrickScript : MonoBehaviour {
 	void OnCollisionEnter(Collision coll) {
 		//Debug.Log ("Destroy on collision");
 
-		if (this.tag == "Unbreakable") {
+		if (this.tag == "UnbreakableBrick") {
 			// No hacemos nada
 		} else {
 			Destroy (gameObject);
@@ -31,7 +35,7 @@ public class BrickScript : MonoBehaviour {
 			// Parse the text of the scoreGT into an int
 			//int score = int.Parse (scoreGT.text);
 			
-			// Add points for catching the apple
+			// Add points for breaking the brick
 			score += 100;
 			PlayerPrefs.SetInt ("Score", score);
 			
@@ -46,6 +50,7 @@ public class BrickScript : MonoBehaviour {
 			// Find out what hit this basket
 			GameObject collidedWith = coll.gameObject;
 			if (collidedWith.tag == "Ball") {
+				World.bricks.Remove(this);
 				Destroy (this);
 			}
 		}
