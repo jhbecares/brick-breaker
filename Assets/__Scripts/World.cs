@@ -68,7 +68,7 @@ public class World : MonoBehaviour {
 				else if (type == "twoshots") {
 
 				}
-				else if (type == "nondestr") {
+				else if (type == "unbreakable") {
 
 				}
 			}
@@ -79,7 +79,7 @@ public class World : MonoBehaviour {
 				else if (type == "twoshots") {
 					
 				}
-				else if (type == "nondestr") {
+				else if (type == "unbreakable") {
 					
 				}
 			}
@@ -90,8 +90,19 @@ public class World : MonoBehaviour {
 				else if (type == "twoshots") {
 					
 				}
-				else if (type == "nondestr") {
+				else if (type == "unbreakable") {
 					
+				}
+			}
+			else if (colour == "black") {
+				if (type == "simple") {
+					GO = Instantiate(brickPrefabs[3]) as GameObject;
+				}
+				else if (type == "twoshots") {
+					
+				}
+				else if (type == "unbreakable") {
+					GO = Instantiate(brickPrefabs[3]) as GameObject;
 				}
 			}
 
