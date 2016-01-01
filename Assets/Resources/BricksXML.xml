@@ -3,7 +3,7 @@
   <!-- y podría empezar en -3 o -4 a 15.5 -->
   <!-- z siempre es 0 -->
   
-  <level id="0">
+  <level id="3">
 	  <!-- Primera fila de ladrillos empezando por debajo -->
 	  <brick type="simple" colour="blue" x="-11" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -622,5 +622,11 @@
 	  <brick type="simple" colour="yellow" x="-1" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="1" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
+	</level>
+	
+	<level id="0">
+	  <!-- Primera fila de ladrillos empezando por debajo -->
+	  <brick type="simple" colour="yellow" x="-7" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+	  <brick type="simple" colour="blue" x="-5" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	</level>
 </xml>
