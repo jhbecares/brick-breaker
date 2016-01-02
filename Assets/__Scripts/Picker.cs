@@ -124,7 +124,14 @@ public class Picker : MonoBehaviour {
 		} else {
 			// en caso contrario simplemente lanzamos de nuevo el nivel
 			SpawnBall();
+<<<<<<< HEAD
 			PlayerPrefs.SetInt("Lives", Lives.lives);
+=======
+			Debug.Log ("Nuevo num de vidas: " + Lives.lives);
+			Debug.Log ("Nuevo 222num de vidas: " + PlayerPrefs.GetInt("Lives"));
+			PlayerPrefs.SetInt("Lives", Lives.lives);
+			Debug.Log ("Nuevo 333num de vidas: " + PlayerPrefs.GetInt("Lives"));
+>>>>>>> 7cc3cb07c16579b18c5f705b2f62100bd8f7abcc
 		}
 	}
 
