@@ -11,17 +11,24 @@ public class BrickScript : MonoBehaviour {
 	void Start () {
 		GameObject scoreGO = GameObject.Find ("ScoreCounter");
 		scoreGT = scoreGO.GetComponent<GUIText> ();
-		scoreGT.text = "Score: 0";
-		PlayerPrefs.SetInt ("Score", 0);
+
+		int sc = PlayerPrefs.GetInt ("Score");
+		if (sc == 0) {
+			scoreGT.text = "Score: 0";
+			PlayerPrefs.SetInt ("Score", 0);
+		} else {
+			scoreGT.text = "Score: " + sc;
+		}
 
 		if (this.tag != "UnbreakableBrick") {
 			World.bricks.Add(this);
 		}
+
+		DontDestroyOnLoad (GameObject.Find ("score"));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 
 	void OnCollisionEnter(Collision coll) {

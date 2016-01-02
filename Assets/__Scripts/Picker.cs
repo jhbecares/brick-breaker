@@ -8,27 +8,54 @@ public class Picker : MonoBehaviour {
 	public GameObject ballPrefab;
 	public GameObject attachedBall = null;
 
-	public int numBaskets = 3;
+	static int times = 0;
+
+	public static int numBaskets = 3;
 	public float paddleBottomY = -14f;
 	public float paddleSpacingY = 2f;
 	public float ballBottomY = -6f;
 	public List<GameObject> paddleList;
 
 	void Start () {
-		// Instanciar la nueva bola
-		Lives.lives = numBaskets;
+		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Highscore"));
+		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
+		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Lives")); 
 
-		Vector3 pos = Vector3.zero;
-		paddleList = new List<GameObject>();
-		for(int i= 0; i<numBaskets; i++) {
-			GameObject tBasketGO = Instantiate ( paddlePrefab ) as GameObject;
-			pos = Vector3.zero;
-			pos.y = paddleBottomY + ( paddleSpacingY * i );
-			tBasketGO.transform.position = pos;
-			paddleList.Add(tBasketGO);
+		if (times == 0) {
+			PlayerPrefs.SetInt ("Score", 0);
+			PlayerPrefs.SetInt ("Lives", numBaskets);
+			times++;
+
+			// Instanciar la nueva bola
+			Lives.lives = numBaskets;
+			
+			Vector3 pos = Vector3.zero;
+			paddleList = new List<GameObject>();
+			for(int i= 0; i<numBaskets; i++) {
+				GameObject tBasketGO = Instantiate ( paddlePrefab ) as GameObject;
+				pos = Vector3.zero;
+				pos.y = paddleBottomY + ( paddleSpacingY * i );
+				tBasketGO.transform.position = pos;
+				paddleList.Add(tBasketGO);
+			}
+			SpawnBall ();
+
+		} else {
+			Lives.lives = PlayerPrefs.GetInt("Lives");
+
+			Vector3 pos = Vector3.zero;
+			paddleList = new List<GameObject>();
+			for(int i= 0; i<Lives.lives; i++) {
+				GameObject tBasketGO = Instantiate ( paddlePrefab ) as GameObject;
+				pos = Vector3.zero;
+				pos.y = paddleBottomY + ( paddleSpacingY * i );
+				tBasketGO.transform.position = pos;
+				paddleList.Add(tBasketGO);
+			}
+			SpawnBall ();
 		}
 
-		SpawnBall ();
+
 	}
 
 	void SpawnBall() {
@@ -64,6 +91,19 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
+	public void DestroyPaddles() {
+		while (paddleList.Count > Lives.lives) {
+			int paddleIndex = paddleList.Count - 1;
+			Lives.lives = paddleIndex;
+		
+			// cogemos la referencia al paddle
+			GameObject tPaddleGO = paddleList [paddleIndex];
+			// y borramos el objeto
+			paddleList.RemoveAt (paddleIndex);
+			Destroy (tPaddleGO);
+		}
+	}
+
 	public void BallDestroyed() {
 		//// Destruimos uno de los paddles
 		// cogemos el índice de nuestra lista de paddles
@@ -80,9 +120,14 @@ public class Picker : MonoBehaviour {
 		if (paddleList.Count == 0) {
 			BrickScript.score = 0; // reseteamos la puntuación
 			Application.LoadLevel ("Level0");
+			times = 0;
 		} else {
 			// en caso contrario simplemente lanzamos de nuevo el nivel
 			SpawnBall();
+			Debug.Log ("Nuevo num de vidas: " + Lives.lives);
+			Debug.Log ("Nuevo 222num de vidas: " + PlayerPrefs.GetInt("Lives"));
+			PlayerPrefs.SetInt("Lives", Lives.lives);
+			Debug.Log ("Nuevo 333num de vidas: " + PlayerPrefs.GetInt("Lives"));
 		}
 	}
 
