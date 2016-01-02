@@ -2,9 +2,13 @@
 using System.Collections;
 
 public class Lives : MonoBehaviour {
-	
+
+	public GUIText livesGT;
+	static int times = 0;
+
 	// Use this for initialization
 	void Start () {
+		DontDestroyOnLoad (livesGT);
 	}
 
 	void Awake() {
@@ -14,8 +18,10 @@ public class Lives : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GUIText gt = this.GetComponent<GUIText> ();
-		gt.text = "Lives: " + lives;
+		GameObject scoreGO = GameObject.Find ("Lives");
+		livesGT = scoreGO.GetComponent<GUIText> ();
+		lives = PlayerPrefs.GetInt("Lives");
+		livesGT.text = "Lives: " + lives;
 	}
 
 	public static int lives {get;set;}
