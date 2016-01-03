@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using UnityEngine;
+=======
+﻿using UnityEngine;
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,15 +19,21 @@ public class Picker : MonoBehaviour {
 	public float paddleSpacingY = 2f;
 	public float ballBottomY = -6f;
 	public List<GameObject> paddleList;
+<<<<<<< HEAD
 	public static int maxLives {get;set;}
+=======
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 
 	void Start () {
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Highscore"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Lives")); 
 
+<<<<<<< HEAD
 		maxLives = 4;
 
+=======
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 		if (times == 0) {
 			PlayerPrefs.SetInt ("Score", 0);
 			PlayerPrefs.SetInt ("Lives", numBaskets);
@@ -107,6 +117,7 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
+<<<<<<< HEAD
 
 	// Crea un nuevo paddle cuando nos dan una vida más
 	// y actualiza los atributos correspondientes
@@ -162,6 +173,36 @@ public class Picker : MonoBehaviour {
 		BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
 		if (ballsc.Length == 0) {
 			SpawnBall();
+=======
+	public void BallDestroyed() {
+		//// Destruimos uno de los paddles
+		// cogemos el índice de nuestra lista de paddles
+		int paddleIndex = paddleList.Count-1;
+		Lives.lives = paddleIndex;
+
+		// cogemos la referencia al paddle
+		GameObject tPaddleGO = paddleList[paddleIndex];
+		// y borramos el objeto
+		paddleList.RemoveAt(paddleIndex);
+		Destroy (tPaddleGO);
+
+		// Si se nos acaban las vidas, volvemos a empezar el juego
+		if (paddleList.Count == 0) {
+			BrickScript.score = 0; // reseteamos la puntuación
+			Application.LoadLevel ("Level0");
+			times = 0;
+		} else {
+			// en caso contrario simplemente lanzamos de nuevo el nivel
+			SpawnBall();
+<<<<<<< HEAD
+			PlayerPrefs.SetInt("Lives", Lives.lives);
+=======
+			Debug.Log ("Nuevo num de vidas: " + Lives.lives);
+			Debug.Log ("Nuevo 222num de vidas: " + PlayerPrefs.GetInt("Lives"));
+			PlayerPrefs.SetInt("Lives", Lives.lives);
+			Debug.Log ("Nuevo 333num de vidas: " + PlayerPrefs.GetInt("Lives"));
+>>>>>>> 7cc3cb07c16579b18c5f705b2f62100bd8f7abcc
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 		}
 	}
 

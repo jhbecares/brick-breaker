@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+<<<<<<< HEAD
 using System.Collections.Generic;
+=======
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 
 public class BrickScript : MonoBehaviour {
 
@@ -8,9 +11,12 @@ public class BrickScript : MonoBehaviour {
 
 	public static int score {get;set;}
 
+<<<<<<< HEAD
 	public GameObject powerupLife;
 	public List<GameObject> powerup;
 
+=======
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 	// Use this for initialization
 	void Start () {
 		GameObject scoreGO = GameObject.Find ("ScoreCounter");
@@ -41,9 +47,12 @@ public class BrickScript : MonoBehaviour {
 		if (this.tag == "UnbreakableBrick") {
 			// No hacemos nada
 		} else {
+<<<<<<< HEAD
 			// Creamos un powerup de forma aleatoria
 
 			CreatePowerUp();
+=======
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 			Destroy (gameObject);
 
 			// Parse the text of the scoreGT into an int
@@ -70,6 +79,7 @@ public class BrickScript : MonoBehaviour {
 		}
 
 	}
+<<<<<<< HEAD
 
 	void CreatePowerUp() {
 		int num = Random.Range (0, 2000);
@@ -87,4 +97,6 @@ public class BrickScript : MonoBehaviour {
 			// en caso contrario no hacemos nada
 		}
 	}
+=======
+>>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 }
