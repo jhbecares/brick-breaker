@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,11 +15,14 @@ public class Picker : MonoBehaviour {
 	public float paddleSpacingY = 2f;
 	public float ballBottomY = -6f;
 	public List<GameObject> paddleList;
+	public static int maxLives {get;set;}
 
 	void Start () {
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Highscore"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Lives")); 
+
+		maxLives = 4;
 
 		if (times == 0) {
 			PlayerPrefs.SetInt ("Score", 0);
@@ -104,34 +107,61 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
+
+	// Crea un nuevo paddle cuando nos dan una vida más
+	// y actualiza los atributos correspondientes
+	public void AddLife() {
+		//if (paddleList.Count < maxLives) {
+			//int paddleIndex = paddleList.Count + 1;
+			//Lives.lives = paddleIndex;
+
+		Debug.Log (Lives.lives);
+			if (Lives.lives < 4) {
+				int numB = paddleList.Count;
+				GameObject tBasketGO = Instantiate (paddlePrefab) as GameObject;
+				Vector3 pos = new Vector3 (paddleList [numB - 1].transform.position.x, paddleBottomY + (paddleSpacingY * numB), 0);
+				tBasketGO.transform.position = pos;
+				paddleList.Add (tBasketGO);
+			}
+
+			Lives.lives++;
+			PlayerPrefs.SetInt ("Lives", Lives.lives);
+		//}
+	}
+
+
 	public void BallDestroyed() {
 		//// Destruimos uno de los paddles
 		// cogemos el índice de nuestra lista de paddles
-		int paddleIndex = paddleList.Count-1;
-		Lives.lives = paddleIndex;
 
-		// cogemos la referencia al paddle
-		GameObject tPaddleGO = paddleList[paddleIndex];
-		// y borramos el objeto
-		paddleList.RemoveAt(paddleIndex);
-		Destroy (tPaddleGO);
+		if (Lives.lives <= 4 && Lives.lives > 1) {
+			int paddleIndex = paddleList.Count - 1;
+			// cogemos la referencia al paddle
+			GameObject tPaddleGO = paddleList [paddleIndex];
+			// y borramos el objeto
+			paddleList.RemoveAt (paddleIndex);
+			Destroy (tPaddleGO);
+		} 
+
+		Lives.lives--;
+		PlayerPrefs.SetInt ("Lives", Lives.lives);
+
 
 		// Si se nos acaban las vidas, volvemos a empezar el juego
-		if (paddleList.Count == 0) {
+		if (Lives.lives == 0 ) {
 			BrickScript.score = 0; // reseteamos la puntuación
-			Application.LoadLevel ("Level0");
+
 			times = 0;
-		} else {
-			// en caso contrario simplemente lanzamos de nuevo el nivel
+			Destroy (GameObject.FindGameObjectWithTag ("Highscore"));
+			Destroy (GameObject.FindGameObjectWithTag ("Score"));
+			Destroy (GameObject.FindGameObjectWithTag ("Lives")); 
+			Application.LoadLevel ("GameOver");
+
+			Destroy (gameObject);
+		} 
+		BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+		if (ballsc.Length == 0) {
 			SpawnBall();
-<<<<<<< HEAD
-			PlayerPrefs.SetInt("Lives", Lives.lives);
-=======
-			Debug.Log ("Nuevo num de vidas: " + Lives.lives);
-			Debug.Log ("Nuevo 222num de vidas: " + PlayerPrefs.GetInt("Lives"));
-			PlayerPrefs.SetInt("Lives", Lives.lives);
-			Debug.Log ("Nuevo 333num de vidas: " + PlayerPrefs.GetInt("Lives"));
->>>>>>> 7cc3cb07c16579b18c5f705b2f62100bd8f7abcc
 		}
 	}
 

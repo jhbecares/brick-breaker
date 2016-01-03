@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BrickScript : MonoBehaviour {
 
 	public GUIText scoreGT;
 
 	public static int score {get;set;}
+
+	public GameObject powerupLife;
+	public List<GameObject> powerup;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +41,9 @@ public class BrickScript : MonoBehaviour {
 		if (this.tag == "UnbreakableBrick") {
 			// No hacemos nada
 		} else {
+			// Creamos un powerup de forma aleatoria
+
+			CreatePowerUp();
 			Destroy (gameObject);
 
 			// Parse the text of the scoreGT into an int
@@ -62,5 +69,22 @@ public class BrickScript : MonoBehaviour {
 			}
 		}
 
+	}
+
+	void CreatePowerUp() {
+		int num = Random.Range (0, 2000);
+		// hacemos que solo se creen vidas cuando el random es módulo 5, para
+		// que no haya demasiadas
+		if (num % 5 == 0 && Lives.lives < Picker.maxLives) {
+			GameObject go = Instantiate (powerupLife) as GameObject;
+			go.transform.position = gameObject.transform.position;
+		} else if (num % 3 == 0) {
+			// creamos cualquier otro powerup si es módulo 2
+			int poweruptype = Random.Range(0, powerup.Count);
+			GameObject go = Instantiate(powerup[poweruptype]) as GameObject;
+			go.transform.position = gameObject.transform.position;
+		} else {
+			// en caso contrario no hacemos nada
+		}
 	}
 }

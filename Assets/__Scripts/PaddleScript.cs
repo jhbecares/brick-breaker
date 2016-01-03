@@ -36,15 +36,17 @@ public class PaddleScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll) {
-		foreach (ContactPoint contact in coll.contacts) {
-			// Queremos saber el punto de contacto con nuestro paddle
-			// para poder modificar la dirección de la bola
-			if (contact.thisCollider == GetComponent<Collider>()) {
-				// Esto corresponde al punto de contacto del paddle
-				float english = contact.point.x - transform.position.x;
-				contact.otherCollider.GetComponent<Rigidbody>().AddForce(200f * english, 0, 0);
+		if (coll.gameObject.tag == "Ball") {
+			foreach (ContactPoint contact in coll.contacts) {
+				// Queremos saber el punto de contacto con nuestro paddle
+				// para poder modificar la dirección de la bola
+				if (contact.thisCollider == GetComponent<Collider> ()) {
+					// Esto corresponde al punto de contacto del paddle
+					float english = contact.point.x - transform.position.x;
+					contact.otherCollider.GetComponent<Rigidbody> ().AddForce (200f * english, 0, 0);
 
+				}
 			}
-		}
+		} 
 	}
 }
