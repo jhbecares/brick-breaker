@@ -3,8 +3,8 @@
   <!-- y podría empezar en -3 o -4 a 15.5 -->
   <!-- z siempre es 0 -->
   
-  <level id="3">
-	  <!-- Primera fila de ladrillos empezando por debajo -->
+  <!--<level id="3">
+	  <!-- Primera fila de ladrillos empezando por debajo 
 	  <brick type="simple" colour="blue" x="-11" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -18,7 +18,7 @@
 	  <brick type="simple" colour="orange" x="9" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- Segunda fila -->
+	  <!-- Segunda fila 
 	  <brick type="simple" colour="blue" x="-11" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -32,7 +32,7 @@
 	  <brick type="simple" colour="orange" x="9" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="-1.5" z="0" scalex="2"  scaley="1" scalez="1"/>
 
-	  <!-- Tercera fila -->
+	  <!-- Tercera fila 
 	  <brick type="simple" colour="blue" x="-11" y="-0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="-0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="-0.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -46,7 +46,7 @@
 	  <brick type="simple" colour="orange" x="9" y="-0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="-0.5" z="0" scalex="2"  scaley="1" scalez="1"/>
 	  
-  	  <!-- Cuarta fila -->
+  	  <!-- Cuarta fila 
 	  <brick type="simple" colour="blue" x="-11" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -60,7 +60,7 @@
 	  <brick type="simple" colour="orange" x="9" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="0.5" z="0" scalex="2"  scaley="1" scalez="1"/>
 
-	  <!-- Quinta fila -->
+	  <!-- Quinta fila 
 	  <brick type="simple" colour="blue" x="-11" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -74,7 +74,7 @@
 	  <brick type="simple" colour="orange" x="9" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- Sexta fila -->
+	  <!-- Sexta fila 
 	  <brick type="simple" colour="blue" x="-11" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -88,7 +88,7 @@
 	  <brick type="simple" colour="orange" x="9" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- Séptima fila -->
+	  <!-- Séptima fila 
 	  <brick type="simple" colour="blue" x="-11" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -102,7 +102,7 @@
 	  <brick type="simple" colour="orange" x="9" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- Octava fila -->
+	  <!-- Octava fila 
 	  <brick type="simple" colour="blue" x="-11" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -116,7 +116,7 @@
 	  <brick type="simple" colour="orange" x="9" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- Novena fila -->
+	  <!-- Novena fila 
 	  <brick type="simple" colour="blue" x="-11" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -130,7 +130,7 @@
 	  <brick type="simple" colour="orange" x="9" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- Décima fila -->
+	  <!-- Décima fila 
 	  <brick type="simple" colour="blue" x="-11" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -144,7 +144,7 @@
 	  <brick type="simple" colour="orange" x="9" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 11 fila -->
+	  <!-- 11 fila 
 	  <brick type="simple" colour="blue" x="-11" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -158,7 +158,7 @@
 	  <brick type="simple" colour="orange" x="9" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 12 fila -->
+	  <!-- 12 fila 
 	  <brick type="simple" colour="blue" x="-11" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -172,7 +172,7 @@
 	  <brick type="simple" colour="orange" x="9" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 13 fila -->
+	  <!-- 13 fila 
 	  <brick type="simple" colour="blue" x="-11" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -186,7 +186,7 @@
 	  <brick type="simple" colour="orange" x="9" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 14 fila -->
+	  <!-- 14 fila 
 	  <brick type="simple" colour="blue" x="-11" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -200,7 +200,7 @@
 	  <brick type="simple" colour="orange" x="9" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 15 fila -->
+	  <!-- 15 fila 
 	  <brick type="simple" colour="blue" x="-11" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -214,7 +214,7 @@
 	  <brick type="simple" colour="orange" x="9" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 16 fila -->
+	  <!-- 16 fila 
 	  <brick type="simple" colour="blue" x="-11" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -228,7 +228,7 @@
 	  <brick type="simple" colour="orange" x="9" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 17 fila -->
+	  <!-- 17 fila 
 	  <brick type="simple" colour="blue" x="-11" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -242,7 +242,7 @@
 	  <brick type="simple" colour="orange" x="9" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 18 fila -->
+	  <!-- 18 fila 
 	  <brick type="simple" colour="blue" x="-11" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -256,7 +256,7 @@
 	  <brick type="simple" colour="orange" x="9" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
 
-	  <!-- 19 fila -->
+	  <!-- 19 fila 
 	  <brick type="simple" colour="blue" x="-11" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="-9" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="-7" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
@@ -269,7 +269,7 @@
 	  <brick type="simple" colour="blue" x="7" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="orange" x="9" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
 	  <brick type="simple" colour="yellow" x="11" y="15.5" z="0" scalex="2"  scaley="1" scalez="1"/>
-  </level>
+  </level> -->
   
    <level id="1">
 	  <!-- Primera fila de ladrillos empezando por debajo -->
