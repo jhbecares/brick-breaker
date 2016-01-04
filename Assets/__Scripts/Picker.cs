@@ -22,7 +22,7 @@ public class Picker : MonoBehaviour {
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Lives")); 
 
-		maxLives = 4;
+		maxLives = 3;
 
 		if (times == 0) {
 			PlayerPrefs.SetInt ("Score", 0);
@@ -48,7 +48,7 @@ public class Picker : MonoBehaviour {
 
 			Vector3 pos = Vector3.zero;
 			paddleList = new List<GameObject>();
-			for(int i= 0; i<Lives.lives; i++) {
+			for(int i= 0; i<Lives.lives && i < maxLives; i++) {
 				GameObject tBasketGO = Instantiate ( paddlePrefab ) as GameObject;
 				pos = Vector3.zero;
 				pos.y = paddleBottomY + ( paddleSpacingY * i );
@@ -105,7 +105,7 @@ public class Picker : MonoBehaviour {
 	// Crea un nuevo paddle cuando nos dan una vida más
 	// y actualiza los atributos correspondientes
 	public void AddLife() {
-		if (Lives.lives < 4) {
+		if (Lives.lives+1 < maxLives) {
 			int numB = paddleList.Count;
 			GameObject tBasketGO = Instantiate (paddlePrefab) as GameObject;
 			Vector3 pos = new Vector3 (paddleList [numB - 1].transform.position.x, paddleBottomY + (paddleSpacingY * numB), 0);
@@ -139,7 +139,7 @@ public class Picker : MonoBehaviour {
 			BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
 			if (ballsc.Length <= 1)
 				SpawnBall();
-		} else if (Lives.lives <= 4 && Lives.lives > 1 && Lives.lives == paddleList.Count) {
+		} else if (Lives.lives <= maxLives && Lives.lives > 1 && Lives.lives == paddleList.Count) {
 			// Las vidas y los paddles son iguales, por tanto hay que destruir uno de los paddle
 			int paddleIndex = paddleList.Count - 1;
 			// cogemos la referencia al paddle
@@ -158,7 +158,7 @@ public class Picker : MonoBehaviour {
 			}
 		} 
 		// Si se nos acaban las vidas, volvemos a empezar el juego
-		else if (Lives.lives == 0) {
+		else if (Lives.lives == 1) {
 			BrickScript.score = 0; // reseteamos la puntuación
 
 			times = 0;
