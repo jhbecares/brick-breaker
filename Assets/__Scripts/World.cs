@@ -25,7 +25,7 @@ public class World : MonoBehaviour {
 
 		// Guardamos el numero de niveles. Lo usaremos para pasar al siguiente
 		numberOfLevels = xml.Count;
-
+        
 		bricks = new List<BrickScript>();
 
 
@@ -41,10 +41,14 @@ public class World : MonoBehaviour {
 			// Cargamos el siguiente nivel
 			int level;
 			int.TryParse(levelNumber, out level);
-			level = (level+ 1)%numberOfLevels;
-			levelNumber = "" + level;
-
-			Application.LoadLevel ("Level" + levelNumber);
+			//level = (level+ 1)%numberOfLevels;
+            level = (level + 1);
+            levelNumber = "" + level;
+            if (level >= numberOfLevels) {
+                Application.LoadLevel("TheEnd");
+            } else {
+                Application.LoadLevel("Level" + levelNumber);
+            }
 		}
 	}
 
