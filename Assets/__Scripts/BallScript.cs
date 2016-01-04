@@ -5,7 +5,6 @@ public class BallScript : MonoBehaviour {
 
 	public GameObject ball;
 	public static float bottomY = -20f;
-<<<<<<< HEAD
 
 	public static int countSizeBall = 0;
 	int maxCount = 500;
@@ -19,22 +18,10 @@ public class BallScript : MonoBehaviour {
 	float minSpeed = 9f;
 
 
-
-
-	void Start() {
-		sizeBallNormal = true;
-		sizeBallBig = false;
-		sizeBallSmall = false;
-=======
-	
-	float maxSpeed = 11f;
-	float minSpeed = 9f;
-
 	void Start() {
 		// Para las pruebas iniciábamos la bola con fuerza, pero ya no lo queremos,
 		// ya que la bola comienza quieta
 		//this.GetComponent<Rigidbody> ().AddForce (80, 800f, 0);
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 	}
 
 	// Update is called once per frame
@@ -59,7 +46,6 @@ public class BallScript : MonoBehaviour {
 			this.gameObject.GetComponent<Rigidbody> ().velocity = this.gameObject.GetComponent<Rigidbody> ().velocity.normalized * minSpeed;
 		}
 	}
-<<<<<<< HEAD
 
 	void LateUpdate() {
 		if (sizeBallBig == true || sizeBallSmall == true) {
@@ -103,6 +89,4 @@ public class BallScript : MonoBehaviour {
 		sizeBallBig = false;
 		sizeBallSmall = false;
 	}
-=======
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 }

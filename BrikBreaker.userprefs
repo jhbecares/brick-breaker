@@ -1,40 +1,13 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Picker.cs">
-    <Files>
-      <File FileName="Assets/__Scripts/PowerUpScript.cs" Line="41" Column="13" />
-      <File FileName="Assets/__Scripts/BallScript.cs" Line="88" Column="74" />
-      <File FileName="Assets/__Scripts/PaddleScript.cs" Line="46" Column="28" />
-      <File FileName="Assets/__Scripts/Picker.cs" Line="19" Column="1" />
-      <File FileName="Assets/__Scripts/BrickScript.cs" Line="1" Column="1" />
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Picker.cs">
-    <Files>
-      <File FileName="Assets/__Scripts/Picker.cs" Line="126" Column="16" />
-      <File FileName="Assets/__Scripts/BallScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/__Scripts/BrickScript.cs" Line="1" Column="1" />
-=======
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Lives.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Picker.cs">
     <Files>
-      <File FileName="Assets/__Scripts/Picker.cs" Line="43" Column="11" />
+      <File FileName="Assets/__Scripts/PowerUpScript.cs" Line="28" Column="4" />
       <File FileName="Assets/__Scripts/BallScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/__Scripts/BrickScript.cs" Line="13" Column="21" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Lives.cs">
-    <Files>
-      <File FileName="Assets/__Scripts/Picker.cs" Line="11" Column="23" />
-      <File FileName="Assets/__Scripts/BallScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/__Scripts/PaddleScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/__Scripts/Picker.cs" Line="201" Column="19" />
       <File FileName="Assets/__Scripts/BrickScript.cs" Line="1" Column="1" />
->>>>>>> 7cc3cb07c16579b18c5f705b2f62100bd8f7abcc
->>>>>>> 53f61683007983fa6b6f440a25568283f7774097
-      <File FileName="Assets/__Scripts/Lives.cs" Line="11" Column="31" />
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
+      <File FileName="Assets/__Scripts/Lives.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

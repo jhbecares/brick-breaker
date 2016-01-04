@@ -4,10 +4,7 @@ using System.Collections;
 public class Lives : MonoBehaviour {
 
 	public GUIText livesGT;
-<<<<<<< HEAD
-=======
 	static int times = 0;
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +12,7 @@ public class Lives : MonoBehaviour {
 	}
 
 	void Awake() {
-		// Assign the high score to ApplePickerHighScore
-		PlayerPrefs.SetInt ("Lives", lives);
+		//PlayerPrefs.SetInt ("Lives", lives);
 	}
 	
 	// Update is called once per frame

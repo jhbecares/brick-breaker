@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 using UnityEngine;
-=======
-﻿using UnityEngine;
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 using System.Collections;
 using System.Collections.Generic;
 
@@ -19,21 +15,15 @@ public class Picker : MonoBehaviour {
 	public float paddleSpacingY = 2f;
 	public float ballBottomY = -6f;
 	public List<GameObject> paddleList;
-<<<<<<< HEAD
 	public static int maxLives {get;set;}
-=======
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 
 	void Start () {
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Highscore"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Lives")); 
 
-<<<<<<< HEAD
 		maxLives = 4;
 
-=======
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
 		if (times == 0) {
 			PlayerPrefs.SetInt ("Score", 0);
 			PlayerPrefs.SetInt ("Lives", numBaskets);
@@ -76,13 +66,6 @@ public class Picker : MonoBehaviour {
 			Debug.Log ("El prefab es null");
 			return;
 		}
-		// Posición de la bola: lo colocamos una unidad más arriba que el paddle
-		//Vector3 ballPos = paddleList[paddleList.Count-1].transform.position + new Vector3(0, 0.75f, 0);
-
-		// Rotación inicial de la bola - dummy
-		//Quaternion ballRot = Quaternion.identity;
-
-		//attachedBall = Instantiate ( ballPrefab, ballPos, ballRot ) as GameObject;
 		attachedBall = Instantiate ( ballPrefab ) as GameObject; 
 
 	}
@@ -104,6 +87,7 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
+	// Eliminamos uno de los paddles y actualizamos las vidas
 	public void DestroyPaddles() {
 		while (paddleList.Count > Lives.lives) {
 			int paddleIndex = paddleList.Count - 1;
@@ -117,49 +101,64 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
-<<<<<<< HEAD
 
 	// Crea un nuevo paddle cuando nos dan una vida más
 	// y actualiza los atributos correspondientes
 	public void AddLife() {
-		//if (paddleList.Count < maxLives) {
-			//int paddleIndex = paddleList.Count + 1;
-			//Lives.lives = paddleIndex;
+		if (Lives.lives < 4) {
+			int numB = paddleList.Count;
+			GameObject tBasketGO = Instantiate (paddlePrefab) as GameObject;
+			Vector3 pos = new Vector3 (paddleList [numB - 1].transform.position.x, paddleBottomY + (paddleSpacingY * numB), 0);
+			tBasketGO.transform.position = pos;
+			paddleList.Add (tBasketGO);
+		}
 
-		Debug.Log (Lives.lives);
-			if (Lives.lives < 4) {
-				int numB = paddleList.Count;
-				GameObject tBasketGO = Instantiate (paddlePrefab) as GameObject;
-				Vector3 pos = new Vector3 (paddleList [numB - 1].transform.position.x, paddleBottomY + (paddleSpacingY * numB), 0);
-				tBasketGO.transform.position = pos;
-				paddleList.Add (tBasketGO);
-			}
-
-			Lives.lives++;
-			PlayerPrefs.SetInt ("Lives", Lives.lives);
-		//}
+		Lives.lives++;
+		PlayerPrefs.SetInt ("Lives", Lives.lives);
 	}
 
+	public void InstantiateBalls() {
+		BallScript currentBall = FindObjectOfType(typeof(BallScript)) as BallScript;
+		//foreach (BallScript ball in ballsc) {
+			GameObject go = Instantiate(ballPrefab) as GameObject;
+			go.GetComponent<Rigidbody>().isKinematic = false;
+			go.transform.position = currentBall.transform.position;
+			go.GetComponent<Rigidbody> ().AddForce(300f*Input.GetAxis("Horizontal"), 300f, 0);
+			go.GetComponent<Rigidbody>().velocity = currentBall.GetComponent<Rigidbody>().velocity;
+	}
 
 	public void BallDestroyed() {
-		//// Destruimos uno de los paddles
-		// cogemos el índice de nuestra lista de paddles
 
-		if (Lives.lives <= 4 && Lives.lives > 1) {
+		int livesOld = Lives.lives;
+
+		if (Lives.lives > paddleList.Count) {
+			// estamos jugando con más de una bola, y por tanto lo único que tenemos que hacer es restar
+			Lives.lives--;
+			PlayerPrefs.SetInt ("Lives", Lives.lives);
+			// Si hay mas de una bola, no hacemos el spawn. 
+			BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+			if (ballsc.Length <= 1)
+				SpawnBall();
+		} else if (Lives.lives <= 4 && Lives.lives > 1 && Lives.lives == paddleList.Count) {
+			// Las vidas y los paddles son iguales, por tanto hay que destruir uno de los paddle
 			int paddleIndex = paddleList.Count - 1;
 			// cogemos la referencia al paddle
 			GameObject tPaddleGO = paddleList [paddleIndex];
 			// y borramos el objeto
 			paddleList.RemoveAt (paddleIndex);
 			Destroy (tPaddleGO);
+			Lives.lives--;
+			PlayerPrefs.SetInt ("Lives", Lives.lives);
+
+			// Comprobamos que a pesar de eliminar un paddle no tenemos sólo una bola, en cuyo caso
+			// la volvemos a lanzar
+			BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+			if (ballsc.Length < 2) {
+				SpawnBall ();
+			}
 		} 
-
-		Lives.lives--;
-		PlayerPrefs.SetInt ("Lives", Lives.lives);
-
-
 		// Si se nos acaban las vidas, volvemos a empezar el juego
-		if (Lives.lives == 0 ) {
+		else if (Lives.lives == 0) {
 			BrickScript.score = 0; // reseteamos la puntuación
 
 			times = 0;
@@ -169,40 +168,12 @@ public class Picker : MonoBehaviour {
 			Application.LoadLevel ("GameOver");
 
 			Destroy (gameObject);
-		} 
-		BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
-		if (ballsc.Length == 0) {
-			SpawnBall();
-=======
-	public void BallDestroyed() {
-		//// Destruimos uno de los paddles
-		// cogemos el índice de nuestra lista de paddles
-		int paddleIndex = paddleList.Count-1;
-		Lives.lives = paddleIndex;
-
-		// cogemos la referencia al paddle
-		GameObject tPaddleGO = paddleList[paddleIndex];
-		// y borramos el objeto
-		paddleList.RemoveAt(paddleIndex);
-		Destroy (tPaddleGO);
-
-		// Si se nos acaban las vidas, volvemos a empezar el juego
-		if (paddleList.Count == 0) {
-			BrickScript.score = 0; // reseteamos la puntuación
-			Application.LoadLevel ("Level0");
-			times = 0;
 		} else {
-			// en caso contrario simplemente lanzamos de nuevo el nivel
-			SpawnBall();
-<<<<<<< HEAD
-			PlayerPrefs.SetInt("Lives", Lives.lives);
-=======
-			Debug.Log ("Nuevo num de vidas: " + Lives.lives);
-			Debug.Log ("Nuevo 222num de vidas: " + PlayerPrefs.GetInt("Lives"));
-			PlayerPrefs.SetInt("Lives", Lives.lives);
-			Debug.Log ("Nuevo 333num de vidas: " + PlayerPrefs.GetInt("Lives"));
->>>>>>> 7cc3cb07c16579b18c5f705b2f62100bd8f7abcc
->>>>>>> 8c1543b2efc504995227672eb83fab4625faffcf
+			// En cualquier otro caso (no debería llegar aquí) simplemente restamos
+			// y volvemos a lanzar la bola
+			Lives.lives--;
+			PlayerPrefs.SetInt ("Lives", Lives.lives);
+			SpawnBall ();
 		}
 	}
 
