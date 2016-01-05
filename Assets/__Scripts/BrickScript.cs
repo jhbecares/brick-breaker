@@ -78,7 +78,7 @@ public class BrickScript : MonoBehaviour {
 		if (num % 7 == 0 && Lives.lives < Picker.maxLives) {
 			GameObject go = Instantiate (powerupLife) as GameObject;
 			go.transform.position = gameObject.transform.position;
-		} else if (num % 6 == 0) {
+		} else if (num % 4 == 0) {
 			// creamos cualquier otro powerup si es módulo 6
 			int poweruptype = Random.Range(0, powerup.Count);
 			GameObject go = Instantiate(powerup[poweruptype]) as GameObject;
