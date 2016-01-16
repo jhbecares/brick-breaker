@@ -11,6 +11,12 @@ public class BrickScript : MonoBehaviour {
 	public GameObject powerupLife;
 	public List<GameObject> powerup;
 
+	 public float lifePowerUpFreq = 0.1f;
+	 public float powerUpFreq = 0.3f;
+
+
+	float transformValue = 0.51f;
+
 	// Use this for initialization
 	void Start () {
 		GameObject scoreGO = GameObject.Find ("ScoreCounter");
@@ -72,19 +78,15 @@ public class BrickScript : MonoBehaviour {
 	}
 
 	void CreatePowerUp() {
-		int num = Random.Range (0, 2000);
-		// hacemos que solo se creen vidas cuando el random es módulo 5, para
-		// que no haya demasiadas
-		if (num % 7 == 0 && Lives.lives < Picker.maxLives) {
-			GameObject go = Instantiate (powerupLife) as GameObject;
-			go.transform.position = gameObject.transform.position;
-		} else if (num % 4 == 0) {
-			// creamos cualquier otro powerup si es módulo 6
+		
+		if (Random.value < powerUpFreq) {
 			int poweruptype = Random.Range(0, powerup.Count);
 			GameObject go = Instantiate(powerup[poweruptype]) as GameObject;
-			go.transform.position = gameObject.transform.position;
-		} else {
-			// en caso contrario no hacemos nada
+			go.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z - transformValue);
 		}
+		else if (Random.value < lifePowerUpFreq) {
+			GameObject go = Instantiate (powerupLife) as GameObject;
+			go.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z - transformValue);
+		}  
 	}
 }
