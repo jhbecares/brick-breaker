@@ -1,0 +1,258 @@
+<xml>
+  <!-- x va de -11 a 11 -->
+  <!-- y podría empezar en -3 o -4 a 15.5 -->
+  <!-- z siempre es 0 -->
+
+  <!-- Primera fila de ladrillos empezando por debajo -->
+  <brick type="simple" colour="blue" x="-11" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="-2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Segunda fila -->
+  <brick type="simple" colour="blue" x="-11" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="-1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="-1.5" z="0" scalex="2"  scaley="1" scalez="1"/>
+
+  <!-- Tercera fila -->
+  <brick type="simple" colour="blue" x="-11" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="0.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="0.5" z="0" scalex="2"  scaley="1" scalez="1"/>
+
+  <!-- Cuarta fila -->
+  <brick type="simple" colour="blue" x="-11" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="1.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Quinta fila -->
+  <brick type="simple" colour="blue" x="-11" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="2.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Sexta fila -->
+  <brick type="simple" colour="blue" x="-11" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="3.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Séptima fila -->
+  <brick type="simple" colour="blue" x="-11" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="4.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Octava fila -->
+  <brick type="simple" colour="blue" x="-11" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="5.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Novena fila -->
+  <brick type="simple" colour="blue" x="-11" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="6.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- Décima fila -->
+  <brick type="simple" colour="blue" x="-11" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="7.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 11 fila -->
+  <brick type="simple" colour="blue" x="-11" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="8.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 12 fila -->
+  <brick type="simple" colour="blue" x="-11" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="9.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 13 fila -->
+  <brick type="simple" colour="blue" x="-11" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="10.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 13 fila -->
+  <brick type="simple" colour="blue" x="-11" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="11.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 14 fila -->
+  <brick type="simple" colour="blue" x="-11" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="12.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 15 fila -->
+  <brick type="simple" colour="blue" x="-11" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="13.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 16 fila -->
+  <brick type="simple" colour="blue" x="-11" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="14.5" z="0" scalex="2" scaley="1" scalez="1"/>
+
+  <!-- 17 fila -->
+  <brick type="simple" colour="blue" x="-11" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-9" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-7" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="-5" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="-3" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="-1" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="1" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="3" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="5" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="blue" x="7" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="orange" x="9" y="15.5" z="0" scalex="2" scaley="1" scalez="1"/>
+  <brick type="simple" colour="yellow" x="11" y="15.5" z="0" scalex="2"  scaley="1" scalez="1"/>
+  
+</xml>

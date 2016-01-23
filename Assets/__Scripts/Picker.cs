@@ -17,6 +17,14 @@ public class Picker : MonoBehaviour {
 	public List<GameObject> paddleList;
 	public static int maxLives {get;set;}
 
+	// Constantes para marcar el tamaño del paddle
+	public static bool sizePaddleSmall { get; set; }
+	public static bool sizePaddleBig { get; set; }
+	public static bool sizePaddleNormal { get; set; }
+	public static int countSizePaddle = 0;
+	int maxCount = 500;
+
+
 	void Start () {
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Highscore"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
@@ -58,7 +66,9 @@ public class Picker : MonoBehaviour {
 			SpawnBall ();
 		}
 
-
+		sizePaddleSmall = false;
+		sizePaddleBig = false;
+		sizePaddleNormal = true;
 	}
 
 	void SpawnBall() {
@@ -83,6 +93,18 @@ public class Picker : MonoBehaviour {
 				//this.GetComponent<Rigidbody> ().AddForce (80, 800f, 0);
 				ballRB.AddForce(300f*Input.GetAxis("Horizontal"), 500f, 0);
 				attachedBall = null;
+			}
+		}
+	}
+
+	void LateUpdate() {
+		if (sizePaddleBig == true || sizePaddleSmall == true) {
+			if (countSizePaddle < maxCount) {
+				countSizePaddle++;
+			}
+			else if (countSizePaddle == maxCount) {
+				NormalisePaddle();
+				countSizePaddle = 0;
 			}
 		}
 	}
@@ -177,4 +199,84 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
+
+
+	// Cuando el paddle choca con un powerup de cambiar el tamaño del paddle, 
+	// llamamos a esta función, que aumenta o disminuye el tamaño con una
+	// probabilidad de 0.5
+	public void ChangePaddleSize() {
+		int val = Random.Range (1, 1000);
+		if (val % 2 == 0) {
+			MaximisePaddle ();
+		} else {
+			MinimisePaddle ();
+		}
+	}
+
+	public void MinimisePaddle() {
+		// volvemos a empezar de 0 para el máximo tiempo del powerup
+		countSizePaddle = 0;
+		if (!sizePaddleSmall) {
+			for (int i = 0; i < paddleList.Count; i++) {
+				float prevx, prevy, prevz;
+				prevx = paddleList [i].transform.localScale.x;
+				prevy = paddleList [i].transform.localScale.y;
+				prevz = paddleList [i].transform.localScale.z;
+				// cambiamos el paddle a una escala más pequeña
+				if (paddleList.Count != 1) {
+					float aux = prevx - (prevx / 2) / (paddleList.Count - 1) * i;
+					Debug.Log (aux);
+
+					paddleList [i].transform.localScale = new Vector3 (aux, prevy, prevz);
+				} else {
+					paddleList [i].transform.localScale = new Vector3 (prevx / 2, prevy, prevz);
+				}
+			}
+
+			// Guardamos con qué tamaño de bola estamos jugando
+			sizePaddleSmall = true;
+			sizePaddleNormal = false;
+			sizePaddleBig = false;
+		}
+	}
+
+	public void MaximisePaddle() {
+		countSizePaddle = 0;
+
+		if (!sizePaddleBig) {
+
+			for (int i = 0; i < paddleList.Count; i++) {
+				float prevx, prevy, prevz;
+				prevx = paddleList [i].transform.localScale.x;
+				prevy = paddleList [i].transform.localScale.y;
+				prevz = paddleList [i].transform.localScale.z;
+				// cambiamos el paddle a una escala más grande
+				if (paddleList.Count != 1) {
+					float aux = prevx + (prevx / 2) / (paddleList.Count - 1) * i;
+					Debug.Log (aux);
+					paddleList [i].transform.localScale = new Vector3 (aux, prevy, prevz);
+				} else {
+					paddleList [i].transform.localScale = new Vector3 (prevx * 2, prevy, prevz);
+				}
+			}
+
+			sizePaddleBig = true;
+			sizePaddleNormal = false;
+			sizePaddleSmall = false;
+		}
+	}
+
+	public void NormalisePaddle() {
+
+		foreach (GameObject paddle in paddleList) {
+			float prevx, prevy, prevz;
+			prevx = paddle.transform.localScale.x;
+			prevy = paddle.transform.localScale.y;
+			prevz = paddle.transform.localScale.z;
+			paddle.transform.localScale = new Vector3(4f, prevy, prevz);
+		}
+		sizePaddleNormal = true;
+		sizePaddleBig = false;
+		sizePaddleSmall = false;
+	}
 }

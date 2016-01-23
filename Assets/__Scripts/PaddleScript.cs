@@ -6,6 +6,7 @@ public class PaddleScript : MonoBehaviour {
 	public float paddleSpeed = 25f;
 	public Bounds bounds;
 
+
 	// Update is called once per frame
 	void Update () {
 
