@@ -127,7 +127,7 @@ public class Picker : MonoBehaviour {
 	// Crea un nuevo paddle cuando nos dan una vida más
 	// y actualiza los atributos correspondientes
 	public void AddLife() {
-		if (Lives.lives+1 < maxLives) {
+		if (Lives.lives+1 <= maxLives) {
 			int numB = paddleList.Count;
 			GameObject tBasketGO = Instantiate (paddlePrefab) as GameObject;
 			Vector3 pos = new Vector3 (paddleList [numB - 1].transform.position.x, paddleBottomY + (paddleSpacingY * numB), 0);
@@ -251,7 +251,6 @@ public class Picker : MonoBehaviour {
 				// cambiamos el paddle a una escala más grande
 				if (paddleList.Count != 1) {
 					float aux = prevx + (prevx / 2) / (paddleList.Count - 1) * i;
-					Debug.Log (aux);
 					paddleList [i].transform.localScale = new Vector3 (aux, prevy, prevz);
 				} else {
 					paddleList [i].transform.localScale = new Vector3 (prevx * 2, prevy, prevz);
