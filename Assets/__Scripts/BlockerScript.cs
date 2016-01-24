@@ -31,8 +31,23 @@ public class BlockerScript : MonoBehaviour {
 		// Contamos cuánto tiempo lleva el bloqueador puesto.
 		// Si supera el tiempo que le hemos asignado, lo eliminamos
 		currentTime += Time.deltaTime * 1000;
+
+		// Si el tiempo para que el bloqueador se quite es mayor que 
+		// blockerTime - blockerTime/10, hacemos que parpadee como modo
+		// de avisar al jugador
+		if (currentTime - startTime > blockerTime - blockerTime / 10) {
+			if(Time.fixedTime%.5<.2)
+			{
+				gameObject.GetComponent<Renderer>().enabled=false;
+			}
+			else{
+				gameObject.GetComponent<Renderer>().enabled=true;
+			}
+		}
+
 		if (currentTime - startTime > blockerTime) {
 			Destroy (gameObject);
 		}
+
 	}
 }

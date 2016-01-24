@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class BrickScript : MonoBehaviour {
 
-	public GUIText scoreGT;
+	public static GUIText scoreGT;
 
 	public static int score {get;set;}
 
