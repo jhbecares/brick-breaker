@@ -14,7 +14,7 @@ public class BallScript : MonoBehaviour {
 	public static bool sizeBallSmall { get; set; }
 
 	// Constantes que regulan en cuánto va a aumentar o disminuir la velocidad de la bola
-	float speedIncreaseConst = 1.25f;
+	float speedIncreaseConst = 2.5f;
 	float speedDecreaseConst = 0.75f;
 
 	// Control de los límites de velocidad de la bola
@@ -110,11 +110,13 @@ public class BallScript : MonoBehaviour {
 
 	public void IncreaseSpeedBall() {
 		maxSpeed = maxSpeed * speedIncreaseConst;
-		ball.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedIncreaseConst; 
+		minSpeed = minSpeed * speedIncreaseConst;
+		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedIncreaseConst; 
 	}
 
 	public void DecreaseSpeedBall() {
 		minSpeed = minSpeed * speedDecreaseConst;
-		ball.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedDecreaseConst; 
+		maxSpeed = maxSpeed * speedDecreaseConst;
+		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedDecreaseConst; 
 	}
 }

@@ -44,9 +44,8 @@ public class PowerUpScript : MonoBehaviour {
 				foreach (Transform child in gameObject.transform) {
 					Destroy (child);
 				}
-
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
-				p.AddLife ();
+				//p.AddLife ();
 				p.InstantiateBalls ();
 			} else if (gameObject.tag == "PowerupBlocker" && coll.collider.tag == "Paddle") {
 				// Creamos una barrera para que la bola no se caiga

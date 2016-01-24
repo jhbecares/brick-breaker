@@ -140,62 +140,69 @@ public class Picker : MonoBehaviour {
 	}
 
 	public void InstantiateBalls() {
-		BallScript currentBall = FindObjectOfType(typeof(BallScript)) as BallScript;
-		//foreach (BallScript ball in ballsc) {
-			GameObject go = Instantiate(ballPrefab) as GameObject;
-			go.GetComponent<Rigidbody>().isKinematic = false;
-			go.transform.position = currentBall.transform.position;
-			go.GetComponent<Rigidbody> ().AddForce(300f*Input.GetAxis("Horizontal"), 300f, 0);
-			go.GetComponent<Rigidbody>().velocity = currentBall.GetComponent<Rigidbody>().velocity;
+		BallScript [] ballscs = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+		foreach (BallScript ball in ballscs) {
+			GameObject go = Instantiate (ballPrefab) as GameObject;
+			go.GetComponent<Rigidbody> ().isKinematic = false;
+			go.transform.position = ball.transform.position;
+			go.GetComponent<Rigidbody> ().AddForce (300f * Input.GetAxis ("Horizontal"), 300f, 0);
+			go.GetComponent<Rigidbody> ().velocity = ball.GetComponent<Rigidbody> ().velocity;
+			//AddLife ();
+		}
 	}
 
 	public void BallDestroyed() {
 
 		int livesOld = Lives.lives;
 
-		if (Lives.lives > paddleList.Count) {
-			// estamos jugando con más de una bola, y por tanto lo único que tenemos que hacer es restar
-			Lives.lives--;
-			PlayerPrefs.SetInt ("Lives", Lives.lives);
-			// Si hay mas de una bola, no hacemos el spawn. 
-			BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
-			if (ballsc.Length <= 1)
-				SpawnBall();
-		} else if (Lives.lives <= maxLives && Lives.lives > 1 && Lives.lives == paddleList.Count) {
-			// Las vidas y los paddles son iguales, por tanto hay que destruir uno de los paddle
-			int paddleIndex = paddleList.Count - 1;
-			// cogemos la referencia al paddle
-			GameObject tPaddleGO = paddleList [paddleIndex];
-			// y borramos el objeto
-			paddleList.RemoveAt (paddleIndex);
-			Destroy (tPaddleGO);
-			Lives.lives--;
-			PlayerPrefs.SetInt ("Lives", Lives.lives);
+		BallScript[] ballscs = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+		if (ballscs.Length == 1) {
 
-			// Comprobamos que a pesar de eliminar un paddle no tenemos sólo una bola, en cuyo caso
-			// la volvemos a lanzar
-			BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
-			if (ballsc.Length < 2) {
+			/*if (Lives.lives > paddleList.Count) {
+				// estamos jugando con más de una bola, y por tanto lo único que tenemos que hacer es restar
+				Lives.lives--;
+				PlayerPrefs.SetInt ("Lives", Lives.lives);
+				// Si hay mas de una bola, no hacemos el spawn. 
+				BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+				if (ballsc.Length <= 1)
+					SpawnBall();
+			} else 
+			*/if (Lives.lives <= maxLives && Lives.lives > 1 && Lives.lives == paddleList.Count) {
+				// Las vidas y los paddles son iguales, por tanto hay que destruir uno de los paddle
+				int paddleIndex = paddleList.Count - 1;
+				// cogemos la referencia al paddle
+				GameObject tPaddleGO = paddleList [paddleIndex];
+				// y borramos el objeto
+				paddleList.RemoveAt (paddleIndex);
+				Destroy (tPaddleGO);
+				Lives.lives--;
+				PlayerPrefs.SetInt ("Lives", Lives.lives);
+
+				// Comprobamos que a pesar de eliminar un paddle no tenemos sólo una bola, en cuyo caso
+				// la volvemos a lanzar
+				BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+				if (ballsc.Length < 2) {
+					SpawnBall ();
+				}
+			} 
+			// Si se nos acaban las vidas, volvemos a empezar el juego
+			else if (Lives.lives == 1) {
+				BrickScript.score = 0; // reseteamos la puntuación
+
+				times = 0;
+				Destroy (GameObject.FindGameObjectWithTag ("Highscore"));
+				Destroy (GameObject.FindGameObjectWithTag ("Score"));
+				Destroy (GameObject.FindGameObjectWithTag ("Lives")); 
+				Application.LoadLevel ("GameOver");
+
+				Destroy (gameObject);
+			} else {
+				// En cualquier otro caso (no debería llegar aquí) simplemente restamos
+				// y volvemos a lanzar la bola
+				Lives.lives--;
+				PlayerPrefs.SetInt ("Lives", Lives.lives);
 				SpawnBall ();
 			}
-		} 
-		// Si se nos acaban las vidas, volvemos a empezar el juego
-		else if (Lives.lives == 1) {
-			BrickScript.score = 0; // reseteamos la puntuación
-
-			times = 0;
-			Destroy (GameObject.FindGameObjectWithTag ("Highscore"));
-			Destroy (GameObject.FindGameObjectWithTag ("Score"));
-			Destroy (GameObject.FindGameObjectWithTag ("Lives")); 
-			Application.LoadLevel ("GameOver");
-
-			Destroy (gameObject);
-		} else {
-			// En cualquier otro caso (no debería llegar aquí) simplemente restamos
-			// y volvemos a lanzar la bola
-			Lives.lives--;
-			PlayerPrefs.SetInt ("Lives", Lives.lives);
-			SpawnBall ();
 		}
 	}
 
