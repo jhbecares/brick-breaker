@@ -31,9 +31,15 @@ public class PowerUpScript : MonoBehaviour {
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
 				p.AddLife ();
 			} else if (gameObject.tag == "BigBallPowerup") {
-				ballsc.MaximiseBall ();
+				BallScript [] bss = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+				foreach (BallScript bs in bss) {
+					bs.MaximiseBall ();
+				}
 			} else if (gameObject.tag == "SmallBallPowerup") {
-				ballsc.MinimiseBall ();
+				BallScript [] bss = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+				foreach (BallScript bs in bss) {
+					bs.MinimiseBall ();
+				}
 			} else if (gameObject.tag == "PowerupThreeBalls") {
 				foreach (Transform child in gameObject.transform) {
 					Destroy (child);
@@ -46,9 +52,20 @@ public class PowerUpScript : MonoBehaviour {
 				// Creamos una barrera para que la bola no se caiga
 				GameObject GO = Instantiate (blockerGO) as GameObject;
 			} else if (gameObject.tag == "PowerupPaddle") {
-
+				// Accedemos al picker y llamamos a la función que cambia el tamaño de los paddle
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
 				p.ChangePaddleSize ();
+			} else if (gameObject.tag == "PowerupSpeedFast") {
+				// Accedemos a todas las bolas para 
+				BallScript [] bss = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+				foreach (BallScript bs in bss) {
+					bs.IncreaseSpeedBall ();
+				}
+			} else if (gameObject.tag == "PowerupSpeedSlow") {
+				BallScript [] bss = FindObjectsOfType(typeof(BallScript)) as BallScript[];
+				foreach (BallScript bs in bss) {
+					bs.DecreaseSpeedBall ();
+				}
 			}
 
 		}

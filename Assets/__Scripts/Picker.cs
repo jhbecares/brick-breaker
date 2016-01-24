@@ -225,8 +225,6 @@ public class Picker : MonoBehaviour {
 				// cambiamos el paddle a una escala más pequeña
 				if (paddleList.Count != 1) {
 					float aux = prevx - (prevx / 2) / (paddleList.Count - 1) * i;
-					Debug.Log (aux);
-
 					paddleList [i].transform.localScale = new Vector3 (aux, prevy, prevz);
 				} else {
 					paddleList [i].transform.localScale = new Vector3 (prevx / 2, prevy, prevz);

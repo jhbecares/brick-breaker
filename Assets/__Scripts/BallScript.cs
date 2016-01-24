@@ -8,14 +8,21 @@ public class BallScript : MonoBehaviour {
 
 	public static int countSizeBall = 0;
 	int maxCount = 500;
+	// Booleanos para controlar el tamaño de la bola
 	public static bool sizeBallNormal { get; set;}
 	public static bool sizeBallBig { get; set; }
 	public static bool sizeBallSmall { get; set; }
 
+	// Constantes que regulan en cuánto va a aumentar o disminuir la velocidad de la bola
+	float speedIncreaseConst = 1.25f;
+	float speedDecreaseConst = 0.75f;
+
+	// Control de los límites de velocidad de la bola
 	float defaultMaxSpeed = 11f;
 	float defaultMinSpeed = 9f;
 	float maxSpeed = 11f;
 	float minSpeed = 9f;
+
 
 
 	void Start() {
@@ -47,6 +54,9 @@ public class BallScript : MonoBehaviour {
 		}
 	}
 
+	// Si la bola no tiene el tamaño normalizado, sumamos 1 a la cuenta
+	// Si la bola ya ha estado el suficiente tiempo con el tamaño cambiado, 
+	// reseteamos el contador y normalizamos el tamaño
 	void LateUpdate() {
 		if (sizeBallBig == true || sizeBallSmall == true) {
 			if (countSizeBall < maxCount) {
@@ -59,7 +69,7 @@ public class BallScript : MonoBehaviour {
 		}
 	}
 
-	
+	// Hace pequeña la bola (la mitad)
 	public void MinimiseBall() {
 		// volvemos a empezar de 0 para el máximo tiempo del powerup
 		countSizeBall = 0;
@@ -72,7 +82,8 @@ public class BallScript : MonoBehaviour {
 		sizeBallNormal = false;
 		sizeBallBig = false;
 	}
-	
+
+	// Maximiza el tamaño de la bola
 	public void MaximiseBall() {
 		countSizeBall = 0;
 		BallScript ballsc = FindObjectOfType(typeof(BallScript)) as BallScript;
@@ -81,12 +92,23 @@ public class BallScript : MonoBehaviour {
 		sizeBallNormal = false;
 		sizeBallSmall = false;
 	}
-	
+
+	// Normaliza el tamaño de la bola para que vuelva a ser como al principio
 	public void NormaliseBall() {
 		BallScript ballsc = FindObjectOfType(typeof(BallScript)) as BallScript;
 		ballsc.ball.transform.localScale = new Vector3(1f, 1f, 1f);
 		sizeBallNormal = true;
 		sizeBallBig = false;
 		sizeBallSmall = false;
+	}
+
+	public void IncreaseSpeedBall() {
+		maxSpeed = maxSpeed * speedIncreaseConst;
+		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedIncreaseConst; 
+	}
+
+	public void DecreaseSpeedBall() {
+		minSpeed = minSpeed * speedDecreaseConst;
+		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedDecreaseConst; 
 	}
 }
