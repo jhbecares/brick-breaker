@@ -8,8 +8,6 @@ public class PowerUpScript : MonoBehaviour {
 
 	public GameObject blockerGO;
 
-	//public GameObject ballGO;
-
 	// Use this for initialization
 	void Start () {
 
@@ -66,9 +64,8 @@ public class PowerUpScript : MonoBehaviour {
 					bs.DecreaseSpeedBall ();
 				}
 			} else if (gameObject.tag == "PowerupPoints") {
-
+				// Sumamos una cantidad de puntos múltiplo de 100 que está entre 100 y 900
 				int aux = 100 * Random.Range (1, 9);
-				Debug.Log ("Aux points: " + aux);
 				int score = BrickScript.score + aux;
 				PlayerPrefs.SetInt ("Score", score);
 				BrickScript.score = score;
