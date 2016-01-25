@@ -26,6 +26,7 @@ public class Picker : MonoBehaviour {
 
 
 	void Start () {
+		
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Highscore"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Score"));
 		DontDestroyOnLoad (GameObject.FindGameObjectWithTag ("Lives")); 

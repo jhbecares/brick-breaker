@@ -26,7 +26,6 @@ public class World : MonoBehaviour {
 		// Guardamos el numero de niveles. Lo usaremos para pasar al siguiente
 		// y saber cuándo terminar
 		numberOfLevels = xml.Count;
-        
 		bricks = new List<BrickScript>();
 
 
@@ -43,7 +42,7 @@ public class World : MonoBehaviour {
 			int level;
 			int.TryParse(levelNumber, out level);
 			//level = (level+ 1)%numberOfLevels;
-            level = (level + 1);
+            level = level + 1;
             levelNumber = "" + level;
             if (level >= numberOfLevels) {
                 Application.LoadLevel("TheEnd");
@@ -206,7 +205,7 @@ public class World : MonoBehaviour {
 							GO = Instantiate (brickPrefabs [2]) as GameObject;
 							GO.tag = "UnbreakableBrick";
 						} 
-					} else if (caux == "N") {
+					} else if (caux == "N") { // BLACK
 						if (taux == "S") {
 							GO = Instantiate (brickPrefabs [3]) as GameObject;
 						} else if (taux == "twoshots") {
@@ -217,7 +216,6 @@ public class World : MonoBehaviour {
 						}
 					}
 					GO.transform.localPosition = new Vector3 (minx + j * scalex, maxy - i * scaley, minz);
-					//Debug.Log (GO.transform.position);
 					GO.transform.localScale = new Vector3 (scalex, scaley, scalez);
 				}
 			}
