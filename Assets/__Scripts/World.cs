@@ -24,6 +24,7 @@ public class World : MonoBehaviour {
 		xml = xmlr.xml ["xml"] [0] ["level"];
 
 		// Guardamos el numero de niveles. Lo usaremos para pasar al siguiente
+		// y saber cuándo terminar
 		numberOfLevels = xml.Count;
         
 		bricks = new List<BrickScript>();
@@ -63,10 +64,14 @@ public class World : MonoBehaviour {
 			}
 		}
 		if (levelHT == null) {
-			Debug.LogError("Room not found: " + rnumberstr);
+			Debug.LogError("Level not found: " + rnumberstr);
 		}
-
-		BuildLevel (levelHT);
+		if (levelHT.att ("type") == "simple") {
+			Debug.Log ("simple level");
+			BuildLevel (levelHT);
+		} else if (levelHT.att ("type") == "advanced") {
+			BuildAdvancedLevel (levelHT);
+		}
 	}
 
 	// 	  <brick type="simple" colour="blue" x="-11" y="-2.5" z="0" x="2" scaley="1" scalez="1"/>
@@ -144,4 +149,79 @@ public class World : MonoBehaviour {
 		}
 	}
 
+
+	public void BuildAdvancedLevel(PT_XMLHashtable level) {
+		// Número de ladrillos en este nivel
+		GameObject GO = null;
+		string type, colour, taux, caux;
+		float x, y, z, scalex, scaley, scalez, minx, miny, minz, maxx, maxy, maxz;
+		PT_XMLHashtable scale = level ["bricktransform"][0]["defaultscale"][0];
+		float.TryParse(scale.att ("x"), out scalex);
+		float.TryParse(scale.att ("y"), out scaley);
+		float.TryParse(scale.att ("z"), out scalez);
+
+		PT_XMLHashtable minpos = level ["bricktransform"][0]["minpos"][0];
+		float.TryParse(minpos.att ("x"), out minx);
+		float.TryParse(minpos.att ("y"), out miny);
+		float.TryParse(minpos.att ("z"), out minz);
+
+		PT_XMLHashtable maxpos = level ["bricktransform"][0]["maxpos"][0];
+		float.TryParse(maxpos.att ("x"), out maxx);
+		float.TryParse(maxpos.att ("y"), out maxy);
+		float.TryParse(maxpos.att ("z"), out maxz);
+
+		int numLinesBricks = level ["brickcolours"][0]["line"].Count;
+		for (int i = 0; i < numLinesBricks; i++) {
+			string linecolour = level ["brickcolours"][0]["line"][i].text;
+			string linetype = level ["bricktypes"][0]["line"][i].text;
+			for (int j = 0; j < linecolour.Length; j++) {
+				caux = linecolour[j].ToString();
+				taux = linetype [j].ToString();
+				//Debug.Log ("Colour: " + caux + ", type: " + taux);
+				if (caux != "X" && taux != "X") {
+					if (caux == "B") { // BLUE
+						if (taux == "S") {
+							GO = Instantiate (brickPrefabs [0]) as GameObject;
+						} else if (taux == "twoshots") {
+
+						} else if (taux == "U") {
+							GO = Instantiate (brickPrefabs [0]) as GameObject;
+							GO.tag = "UnbreakableBrick";
+						}
+					} else if (caux == "O") { // ORANGE
+						if (taux == "S") {
+							GO = Instantiate (brickPrefabs [1]) as GameObject;
+						} else if (taux == "twoshots") {
+
+						} else if (taux == "U") {
+							GO = Instantiate (brickPrefabs [1]) as GameObject;
+							GO.tag = "UnbreakableBrick";
+						} 
+					} else if (caux == "A") { // YELLOW
+						if (taux == "S") {
+							GO = Instantiate (brickPrefabs [2]) as GameObject;
+						} else if (taux == "twoshots") {
+
+						} else if (taux == "U") {
+							GO = Instantiate (brickPrefabs [2]) as GameObject;
+							GO.tag = "UnbreakableBrick";
+						} 
+					} else if (caux == "N") {
+						if (taux == "S") {
+							GO = Instantiate (brickPrefabs [3]) as GameObject;
+						} else if (taux == "twoshots") {
+
+						} else if (taux == "U") {
+							GO = Instantiate (brickPrefabs [3]) as GameObject;
+							GO.tag = "UnbreakableBrick";
+						}
+					}
+					GO.transform.localPosition = new Vector3 (minx + j * scalex, maxy - i * scaley, minz);
+					//Debug.Log (GO.transform.position);
+					GO.transform.localScale = new Vector3 (scalex, scaley, scalez);
+				}
+			}
+		}
+	}
 }
+

@@ -157,17 +157,7 @@ public class Picker : MonoBehaviour {
 
 		BallScript[] ballscs = FindObjectsOfType(typeof(BallScript)) as BallScript[];
 		if (ballscs.Length == 1) {
-
-			/*if (Lives.lives > paddleList.Count) {
-				// estamos jugando con más de una bola, y por tanto lo único que tenemos que hacer es restar
-				Lives.lives--;
-				PlayerPrefs.SetInt ("Lives", Lives.lives);
-				// Si hay mas de una bola, no hacemos el spawn. 
-				BallScript [] ballsc = FindObjectsOfType(typeof(BallScript)) as BallScript[];
-				if (ballsc.Length <= 1)
-					SpawnBall();
-			} else 
-			*/if (Lives.lives <= maxLives && Lives.lives > 1 && Lives.lives == paddleList.Count) {
+			if (Lives.lives <= maxLives && Lives.lives > 1 && Lives.lives == paddleList.Count) {
 				// Las vidas y los paddles son iguales, por tanto hay que destruir uno de los paddle
 				int paddleIndex = paddleList.Count - 1;
 				// cogemos la referencia al paddle
