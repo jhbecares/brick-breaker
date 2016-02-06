@@ -14,15 +14,14 @@ public class BallScript : MonoBehaviour {
 	public static bool sizeBallSmall { get; set; }
 
 	// Constantes que regulan en cuánto va a aumentar o disminuir la velocidad de la bola
-	float speedIncreaseConst = 2.5f;
+	float speedIncreaseConst = 1.25f;
 	float speedDecreaseConst = 0.75f;
 
 	// Control de los límites de velocidad de la bola
 	float defaultMaxSpeed = 11f;
 	float defaultMinSpeed = 9f;
-	float maxSpeed = 11f;
+	float maxSpeed = 13f;
 	float minSpeed = 9f;
-
 
 
 	void Start() {
@@ -49,11 +48,15 @@ public class BallScript : MonoBehaviour {
 		// ya que con un mal golpe se puede acelerar
 		Vector3 vel = this.gameObject.GetComponent<Rigidbody> ().velocity;
 		if (vel.magnitude > maxSpeed) {
-			this.gameObject.GetComponent<Rigidbody> ().velocity = this.gameObject.GetComponent<Rigidbody> ().velocity.normalized * maxSpeed;
+			//this.gameObject.GetComponent<Rigidbody> ().velocity = this.gameObject.GetComponent<Rigidbody> ().velocity.normalized * maxSpeed;
+			ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity.normalized * maxSpeed;
+
 		}
 
 		if (vel.magnitude < minSpeed) {
-			this.gameObject.GetComponent<Rigidbody> ().velocity = this.gameObject.GetComponent<Rigidbody> ().velocity.normalized * minSpeed;
+			//this.gameObject.GetComponent<Rigidbody> ().velocity = this.gameObject.GetComponent<Rigidbody> ().velocity.normalized * minSpeed;
+			ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity.normalized * minSpeed;
+
 		}
 	}
 
@@ -111,12 +114,13 @@ public class BallScript : MonoBehaviour {
 	public void IncreaseSpeedBall() {
 		maxSpeed = maxSpeed * speedIncreaseConst;
 		minSpeed = minSpeed * speedIncreaseConst;
-		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedIncreaseConst; 
+		//ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedIncreaseConst; 
+		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity.normalized * maxSpeed; 
 	}
 
 	public void DecreaseSpeedBall() {
 		minSpeed = minSpeed * speedDecreaseConst;
 		maxSpeed = maxSpeed * speedDecreaseConst;
-		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedDecreaseConst; 
+		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity.normalized * minSpeed; 
 	}
 }

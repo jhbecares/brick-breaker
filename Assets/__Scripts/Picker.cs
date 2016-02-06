@@ -81,6 +81,27 @@ public class Picker : MonoBehaviour {
 
 	}
 
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.U)) {
+			AudioListener.pause = false;
+			AudioListener.volume = 1;
+		}
+		if (Input.GetKeyDown(KeyCode.M)) {
+			AudioListener.pause = true;
+			AudioListener.volume = 0;
+		}
+		if (Input.GetKeyDown(KeyCode.P)) {
+			Time.timeScale = 0;
+		}
+		if (Input.GetKeyDown (KeyCode.R)) {
+			Time.timeScale = 1;
+		}
+		if (Input.GetKeyDown (KeyCode.K)) {
+			Picker pickerScript = Camera.main.GetComponent<Picker>();
+			pickerScript.BallDestroyed();
+		}
+	}
+
 	// Usamos fixed update en lugar de update para que no haya lag en nuestra bola al moverla con el paddle
 	void FixedUpdate() {
 
