@@ -66,14 +66,12 @@ public class World : MonoBehaviour {
 			Debug.LogError("Level not found: " + rnumberstr);
 		}
 		if (levelHT.att ("type") == "simple") {
-			Debug.Log ("simple level");
 			BuildLevel (levelHT);
 		} else if (levelHT.att ("type") == "advanced") {
 			BuildAdvancedLevel (levelHT);
 		}
 	}
 
-	// 	  <brick type="simple" colour="blue" x="-11" y="-2.5" z="0" x="2" scaley="1" scalez="1"/>
 	public void BuildLevel(PT_XMLHashtable level) {
 		// Número de ladrillos en este nivel
 		int numBricks = level ["brick"].Count;
