@@ -23,7 +23,9 @@ public class Picker : MonoBehaviour {
 	public static bool sizePaddleNormal { get; set; }
 	public static int countSizePaddle = 0;
 	int maxCount = 500;
-
+    public static bool magnet {
+        get; set;
+    }
 
 	void Start () {
 		
@@ -97,7 +99,6 @@ public class Picker : MonoBehaviour {
 			Time.timeScale = 1;
 		}
 		if (Input.GetKeyDown (KeyCode.K)) {
-            // FIXME
             GameObject[] ballscs = GameObject.FindGameObjectsWithTag("Ball") as GameObject[];
             foreach (GameObject ball in ballscs) {
                 Destroy(ball);
@@ -300,4 +301,19 @@ public class Picker : MonoBehaviour {
 		sizePaddleBig = false;
 		sizePaddleSmall = false;
 	}
+
+    public void AttachBall (GameObject ball) {
+        Debug.Log("ATTACH BALL");
+        attachedBall = ball;
+        Rigidbody ballRB = ball.GetComponent<Rigidbody>();
+        ballRB.position = paddleList[paddleList.Count - 1].transform.position + new Vector3(0, 0.75f, 0);
+
+      /*  if (Input.GetButtonDown("Jump")) {
+            ballRB.isKinematic = false;
+            //this.GetComponent<Rigidbody> ().AddForce (80, 800f, 0);
+            ballRB.AddForce(300f * Input.GetAxis("Horizontal"), 500f, 0);
+            magnet = false;
+        }*/
+        magnet = false;
+    }
 }

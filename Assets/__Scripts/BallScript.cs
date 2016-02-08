@@ -122,4 +122,20 @@ public class BallScript : MonoBehaviour {
 		maxSpeed = maxSpeed * speedDecreaseConst;
 		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity.normalized * minSpeed; 
 	}
+
+    void OnCollisionEnter(Collision coll) {
+        if (coll.collider.tag == "Paddle") {
+            if (Picker.magnet == true) {
+                    ball.gameObject.GetComponent<Rigidbody>().velocity = ball.gameObject.GetComponent<Rigidbody>().velocity * 0;
+                    ball.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                    Picker picker = FindObjectOfType(typeof(Picker)) as Picker;
+                    picker.AttachBall(ball);
+                // A) espero que funcione
+              //  ball.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+               // ball.gameObject.GetComponent<Rigidbody>().AddForce(ball.gameObject.GetComponent<Rigidbody>().)
+
+            }
+            
+        }
+    }
 }

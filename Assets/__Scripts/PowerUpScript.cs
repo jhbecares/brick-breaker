@@ -77,7 +77,10 @@ public class PowerUpScript : MonoBehaviour {
 				if (score > HighScore.score) {
 					HighScore.score = score;
 				}
-			}
+			} else if (gameObject.tag == "PowerupIman") {
+                Debug.Log("Powerup iman");
+                Picker.magnet = true;
+            }
 
 		}
 		Destroy (gameObject);
