@@ -97,10 +97,13 @@ public class Picker : MonoBehaviour {
 			Time.timeScale = 1;
 		}
 		if (Input.GetKeyDown (KeyCode.K)) {
-			// FIXME
-			Picker pickerScript = Camera.main.GetComponent<Picker>();
-			pickerScript.BallDestroyed();
-		}
+            // FIXME
+            GameObject[] ballscs = GameObject.FindGameObjectsWithTag("Ball") as GameObject[];
+            foreach (GameObject ball in ballscs) {
+                Destroy(ball);
+            }
+            this.BallDestroyed(true);
+        }
 	}
 
 	// Usamos fixed update en lugar de update para que no haya lag en nuestra bola al moverla con el paddle
@@ -174,12 +177,12 @@ public class Picker : MonoBehaviour {
 		}
 	}
 
-	public void BallDestroyed() {
+	public void BallDestroyed(bool kill) {
 
 		int livesOld = Lives.lives;
 
 		BallScript[] ballscs = FindObjectsOfType(typeof(BallScript)) as BallScript[];
-		if (ballscs.Length == 1) {
+		if (ballscs.Length == 1 || kill == true) {
 			if (Lives.lives <= maxLives && Lives.lives > 1 && Lives.lives == paddleList.Count) {
 				// Las vidas y los paddles son iguales, por tanto hay que destruir uno de los paddle
 				int paddleIndex = paddleList.Count - 1;
@@ -199,6 +202,7 @@ public class Picker : MonoBehaviour {
 				}
 			} 
 			// Si se nos acaban las vidas, volvemos a empezar el juego
+            // OLD. Ahora hay una escena de game over.
 			else if (Lives.lives == 1) {
 				BrickScript.score = 0; // reseteamos la puntuación
 

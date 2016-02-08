@@ -41,7 +41,7 @@ public class BallScript : MonoBehaviour {
 
 			// Además, eliminamos uno de los paddles
 			Picker pickerScript = Camera.main.GetComponent<Picker>();
-			pickerScript.BallDestroyed();
+			pickerScript.BallDestroyed(false);
 		}
 
 		// Limitamos la velocidad de la bola para que no haga cosas raras,
