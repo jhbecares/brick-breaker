@@ -97,6 +97,7 @@ public class Picker : MonoBehaviour {
 			Time.timeScale = 1;
 		}
 		if (Input.GetKeyDown (KeyCode.K)) {
+			// FIXME
 			Picker pickerScript = Camera.main.GetComponent<Picker>();
 			pickerScript.BallDestroyed();
 		}

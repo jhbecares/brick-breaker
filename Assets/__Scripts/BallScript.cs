@@ -79,13 +79,13 @@ public class BallScript : MonoBehaviour {
 		}
 	}
 
-	// Hace pequeña la bola (la mitad)
+	// Hace pequeña la bola (a la mitad)
 	public void MinimiseBall() {
 		// volvemos a empezar de 0 para el máximo tiempo del powerup
 		countSizeBall = 0;
 
 		// le cambiamos la escala a una más pequeña
-		ball.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+		ball.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
 		// Guardamos con qué tamaño de bola estamos jugando
 		sizeBallSmall = true;
@@ -114,7 +114,6 @@ public class BallScript : MonoBehaviour {
 	public void IncreaseSpeedBall() {
 		maxSpeed = maxSpeed * speedIncreaseConst;
 		minSpeed = minSpeed * speedIncreaseConst;
-		//ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity * speedIncreaseConst; 
 		ball.gameObject.GetComponent<Rigidbody> ().velocity = ball.gameObject.GetComponent<Rigidbody> ().velocity.normalized * maxSpeed; 
 	}
 
