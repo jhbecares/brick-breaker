@@ -29,14 +29,14 @@ public class PowerUpScript : MonoBehaviour {
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
 				p.AddLife ();
 			} else if (gameObject.tag == "BigBallPowerup") {
-				BallScript[] bss = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-				foreach (BallScript bs in bss) {
-					bs.MaximiseBall ();
+				GameObject[] bss = GameObject.FindGameObjectsWithTag ("Ball");
+				foreach (GameObject bs in bss) {
+					bs.GetComponent<BallScript>().MaximiseBall ();
 				}
 			} else if (gameObject.tag == "SmallBallPowerup") {
-				BallScript[] bss = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-				foreach (BallScript bs in bss) {
-					bs.MinimiseBall ();
+				GameObject [] bss = GameObject.FindGameObjectsWithTag ("Ball");
+				foreach (GameObject bs in bss) {
+					bs.GetComponent<BallScript>().MinimiseBall ();
 				}
 			} else if (gameObject.tag == "PowerupThreeBalls") {
 				foreach (Transform child in gameObject.transform) {
@@ -53,15 +53,15 @@ public class PowerUpScript : MonoBehaviour {
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
 				p.ChangePaddleSize ();
 			} else if (gameObject.tag == "PowerupSpeedFast") {
-				// Accedemos a todas las bolas para 
-				BallScript[] bss = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-				foreach (BallScript bs in bss) {
-					bs.IncreaseSpeedBall ();
+				// Accedemos a todas las bolas aumentar su velocidad 
+				GameObject [] bss = GameObject.FindGameObjectsWithTag ("Ball");
+				foreach (GameObject bs in bss) {
+					bs.GetComponent<BallScript>().IncreaseSpeedBall ();
 				}
 			} else if (gameObject.tag == "PowerupSpeedSlow") {
-				BallScript[] bss = FindObjectsOfType (typeof(BallScript)) as BallScript[];
-				foreach (BallScript bs in bss) {
-					bs.DecreaseSpeedBall ();
+				GameObject [] bss = GameObject.FindGameObjectsWithTag ("Ball");
+				foreach (GameObject bs in bss) {
+					bs.GetComponent<BallScript>().DecreaseSpeedBall ();
 				}
 			} else if (gameObject.tag == "PowerupPoints") {
 				// Sumamos una cantidad de puntos múltiplo de 100 que está entre 100 y 900
@@ -78,9 +78,10 @@ public class PowerUpScript : MonoBehaviour {
 					HighScore.score = score;
 				}
 			} else if (gameObject.tag == "PowerupIman") {
-                Debug.Log("Powerup iman");
-                Picker.magnet = true;
-            }
+				Picker.magnet = true;
+			} else if (gameObject.tag == "PowerupBomb") {
+				Debug.Log ("Powerup bomb");
+			}
 
 		}
 		Destroy (gameObject);

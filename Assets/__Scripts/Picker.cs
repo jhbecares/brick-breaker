@@ -303,7 +303,6 @@ public class Picker : MonoBehaviour {
 	}
 
     public void AttachBall (GameObject ball) {
-        Debug.Log("ATTACH BALL");
         attachedBall = ball;
         Rigidbody ballRB = ball.GetComponent<Rigidbody>();
         ballRB.position = paddleList[paddleList.Count - 1].transform.position + new Vector3(0, 0.75f, 0);

@@ -435,4 +435,41 @@
 			<line>SSSSSSSSSSSSSSSSS</line>
 		</bricktypes>
 	</level>
+
+	<level id="4" type="advanced">
+		<bricktransform>
+			<defaultscale x="1.2" y="1" z="1"/>
+			<minpos x="-9.5" y="-2" z="0"/>
+			<maxpos x="11" y="10" z="0"/>
+		</bricktransform>
+		<brickcolours>
+			<line>XXXXXXXXOXXXXXXXX</line>
+			<line>XXXXXXXOMOXXXXXXX</line>
+			<line>XXXXXXOANAOXXXXXX</line>
+			<line>XXXXXOANXNAOXXXXX</line>
+			<line>XXXXOMNXXXNMOXXXX</line>
+			<line>XXXXXOANXNAOXXXXX</line>
+			<line>XXXXXXOANAOXXXXXX</line>
+			<line>XXXXXXXOMOXXXXXXX</line>
+			<line>XXXXXXXXOXXXXXXXX</line>
+			<line>XXXXAAAAAAAAAXXXX</line>
+			<line>XXOOOOOOMOOOOOOXX</line>
+			<line>ABABABABABABABABA</line>
+		</brickcolours>
+
+		<bricktypes>
+		 	<line>XXXXXXXXSXXXXXXXX</line>
+			<line>XXXXXXXSSSXXXXXXX</line>
+			<line>XXXXXXSSUSSXXXXXX</line>
+			<line>XXXXXSSUXUSSXXXXX</line>
+			<line>XXXXSSUXXXUSSXXXX</line>
+			<line>XXXXXSSUXUSSXXXXX</line>
+			<line>XXXXXXSSUSSXXXXXX</line>
+			<line>XXXXXXXSSSXXXXXXX</line>
+			<line>XXXXXXXXSXXXXXXXX</line>
+			<line>XXXXSSSSSSSSSXXXX</line>
+			<line>XXSSSSSSSSSSSSSXX</line>
+			<line>SSSSSSSSSSSSSSSSS</line>
+		</bricktypes>
+	</level>
 </xml>

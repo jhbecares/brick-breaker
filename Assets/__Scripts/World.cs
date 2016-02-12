@@ -212,6 +212,9 @@ public class World : MonoBehaviour {
 							GO = Instantiate (brickPrefabs [3]) as GameObject;
 							GO.tag = "UnbreakableBrick";
 						}
+					} else if (caux == "M") { // Bomb brick
+						GO = Instantiate (brickPrefabs [4]) as GameObject;
+						GO.tag = "BrickBomb";
 					}
 					GO.transform.localPosition = new Vector3 (minx + j * scalex, maxy - i * scaley, minz);
 					GO.transform.localScale = new Vector3 (scalex, scaley, scalez);

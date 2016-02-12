@@ -11,9 +11,10 @@ public class BrickScript : MonoBehaviour {
 	public GameObject powerupLife;
 	public List<GameObject> powerup;
 
-	 public float lifePowerUpFreq = 0.1f;
-	 public float powerUpFreq = 0.3f;
+	public float lifePowerUpFreq = 0.1f;
+	public float powerUpFreq = 0.3f;
 
+	float radius = 2.0f;
 
 	float transformValue = 0.51f;
 
@@ -46,6 +47,28 @@ public class BrickScript : MonoBehaviour {
 
 		if (this.tag == "UnbreakableBrick") {
 			// No hacemos nada
+		} else if (this.tag == "BrickBomb") {
+			if (coll.gameObject.tag == "Ball") {
+				// Explotamos los ladrillos que haya en un radio determinado
+
+				Collider[] colliders = Physics.OverlapSphere (coll.gameObject.transform.position, radius);
+				Destroy (gameObject);
+				score += 200;
+				foreach (Collider col in colliders) {
+					if (col.tag == "Brick") {
+						Destroy (col.gameObject);
+						score += 200;
+					}
+				}
+				PlayerPrefs.SetInt ("Score", score);
+				// Convert the score back to a string and display it
+				scoreGT.text = "Score: " + score.ToString ();
+
+				// Track the high score
+				if (score > HighScore.score) {
+					HighScore.score = score;
+				}
+			}
 		} else {
 			// Creamos un powerup de forma aleatoria
 
