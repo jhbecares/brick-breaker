@@ -7,6 +7,7 @@ public class MessageScript : MonoBehaviour {
 	public int points { get; set; }
 	public bool messagePointsBool{ get; set; }
 	public bool messageLifeBool{ get; set; }
+	public bool messageIman{ get; set; }
 
 	float startTime;
 	float currentTime;
@@ -22,6 +23,8 @@ public class MessageScript : MonoBehaviour {
 			messagePointsBool = true;
 		} else if (this.gameObject.tag == "MessageLife") {
 			messageLifeBool = true;
+		} else if (this.gameObject.tag == "MessageIman") {
+			messageIman = true;
 		}
 	}
 
@@ -38,7 +41,7 @@ public class MessageScript : MonoBehaviour {
 		// Hacemos que el mensaje parpadee durante todo el tiempo que está activo
 		// Cuando su tiempo de vida (timeAlive) ya ha acabado, destruimos el 
 		// componente
-		if (messagePointsBool == true) {
+		if (messagePointsBool == true || messageLifeBool == true || messageIman == true) {
 			if(Time.fixedTime%.5<.2) {
 				this.gameObject.GetComponent<GUIText> ().enabled = false;
 			}
@@ -49,19 +52,6 @@ public class MessageScript : MonoBehaviour {
 			if (currentTime - startTime > timeAlive) {
 				Destroy (this.gameObject);
 				Destroy (this.GetComponent<GUIText> ());
-				Destroy (this);
-			}
-		} else if (messageLifeBool == true) {
-			if(Time.fixedTime%.5<.2) {
-				this.gameObject.GetComponent<GUIText> ().enabled = false;
-			}
-			else{
-				this.gameObject.GetComponent<GUIText> ().enabled = true;
-			}
-
-			if (currentTime - startTime > timeAlive) {
-				Destroy (this.gameObject);
-				Destroy (this.gameObject.GetComponent<GUIText> ());
 				Destroy (this);
 			}
 		}

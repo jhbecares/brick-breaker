@@ -10,6 +10,7 @@ public class PowerUpScript : MonoBehaviour {
 
 	public GameObject messagePoints;
 	public GameObject messageLife;
+	public GameObject messageMagnet;
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +46,6 @@ public class PowerUpScript : MonoBehaviour {
 					Destroy (child);
 				}
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
-				//p.AddLife ();
 				p.InstantiateBalls ();
 			} else if (gameObject.tag == "PowerupBlocker" && coll.collider.tag == "Paddle") {
 				// Creamos una barrera para que la bola no se caiga
@@ -79,18 +79,17 @@ public class PowerUpScript : MonoBehaviour {
 				if (score > HighScore.score) {
 					HighScore.score = score;
 				}
-
+				// Instanciamos el mensaje que nos avisa de que nos han dado puntos
 				GameObject msg = Instantiate (messagePoints) as GameObject;
 				msg.GetComponent<MessageScript> ().messagePointsBool = true;
 				msg.GetComponent<MessageScript> ().ShowMessagePoints (aux);
-				Debug.Log ("Message should be here");
 
 			} else if (gameObject.tag == "PowerupIman") {
 				Picker.magnet = true;
-			} else if (gameObject.tag == "PowerupBomb") {
-				Debug.Log ("Powerup bomb");
-			}
-
+				// Instanciamos el mensaje que nos avisa de que el paddle es un imán
+				GameObject msg = Instantiate (messageMagnet) as GameObject;
+				msg.GetComponent<MessageScript> ().messageIman = true;
+			} 
 		}
 		Destroy (gameObject);
 	}

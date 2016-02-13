@@ -130,10 +130,6 @@ public class BallScript : MonoBehaviour {
                     ball.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     Picker picker = FindObjectOfType(typeof(Picker)) as Picker;
                     picker.AttachBall(ball);
-                // A) espero que funcione
-              //  ball.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-               // ball.gameObject.GetComponent<Rigidbody>().AddForce(ball.gameObject.GetComponent<Rigidbody>().)
-
             }
             
         }
