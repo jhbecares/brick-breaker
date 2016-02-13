@@ -4,7 +4,6 @@ using System.Collections;
 public class Lives : MonoBehaviour {
 
 	public GUIText livesGT;
-	static int times = 0;
 
 	// Use this for initialization
 	void Start () {
