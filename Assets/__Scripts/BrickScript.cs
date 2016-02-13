@@ -53,9 +53,11 @@ public class BrickScript : MonoBehaviour {
 
 				Collider[] colliders = Physics.OverlapSphere (coll.gameObject.transform.position, radius);
 				Destroy (gameObject);
+				World.bricks.Remove(gameObject.GetComponent<BrickScript>());
 				score += 200;
 				foreach (Collider col in colliders) {
 					if (col.tag == "Brick") {
+						World.bricks.Remove(col.gameObject.GetComponent<BrickScript>());
 						Destroy (col.gameObject);
 						score += 200;
 					}
