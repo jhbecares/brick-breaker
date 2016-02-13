@@ -8,6 +8,9 @@ public class PowerUpScript : MonoBehaviour {
 
 	public GameObject blockerGO;
 
+	public GameObject messagePoints;
+	public GameObject messageLife;
+
 	// Use this for initialization
 	void Start () {
 
@@ -21,13 +24,12 @@ public class PowerUpScript : MonoBehaviour {
 	void OnCollisionEnter(Collision coll) {
 		if (coll.collider.tag == "Paddle") {
 			AudioSource.PlayClipAtPoint (powerupHitAudio, transform.position);
-		
-
-			BallScript ballsc = FindObjectOfType (typeof(BallScript)) as BallScript;
-			PaddleScript paddlesc = FindObjectOfType (typeof(PaddleScript)) as PaddleScript;
 			if (gameObject.tag == "PowerupLife") {
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
 				p.AddLife ();
+
+				GameObject msg = Instantiate (messageLife) as GameObject;
+				msg.GetComponent<MessageScript> ().messageLifeBool = true;
 			} else if (gameObject.tag == "BigBallPowerup") {
 				GameObject[] bss = GameObject.FindGameObjectsWithTag ("Ball");
 				foreach (GameObject bs in bss) {
@@ -47,7 +49,7 @@ public class PowerUpScript : MonoBehaviour {
 				p.InstantiateBalls ();
 			} else if (gameObject.tag == "PowerupBlocker" && coll.collider.tag == "Paddle") {
 				// Creamos una barrera para que la bola no se caiga
-				GameObject GO = Instantiate (blockerGO) as GameObject;
+				Instantiate (blockerGO);
 			} else if (gameObject.tag == "PowerupPaddle") {
 				// Accedemos al picker y llamamos a la función que cambia el tamaño de los paddle
 				Picker p = FindObjectOfType (typeof(Picker)) as Picker;
@@ -77,6 +79,12 @@ public class PowerUpScript : MonoBehaviour {
 				if (score > HighScore.score) {
 					HighScore.score = score;
 				}
+
+				GameObject msg = Instantiate (messagePoints) as GameObject;
+				msg.GetComponent<MessageScript> ().messagePointsBool = true;
+				msg.GetComponent<MessageScript> ().ShowMessagePoints (aux);
+				Debug.Log ("Message should be here");
+
 			} else if (gameObject.tag == "PowerupIman") {
 				Picker.magnet = true;
 			} else if (gameObject.tag == "PowerupBomb") {

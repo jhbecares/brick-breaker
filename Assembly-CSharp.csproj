@@ -51,6 +51,7 @@
      <Compile Include="Assets\__Scripts\HighScore.cs" />
      <Compile Include="Assets\__Scripts\Lives.cs" />
      <Compile Include="Assets\__Scripts\MenuScript.cs" />
+     <Compile Include="Assets\__Scripts\MessageScript.cs" />
      <Compile Include="Assets\__Scripts\PT_XMLReader.cs" />
      <Compile Include="Assets\__Scripts\PaddleScript.cs" />
      <Compile Include="Assets\__Scripts\Picker.cs" />
